@@ -4,10 +4,11 @@ import java.time.LocalDate;
 
 public class Transaction {
     //fields
-    public String title;
-    public LocalDate date;
-    public int amount;
-    public String category;
+    private String title;
+    private LocalDate date;
+    private int amount;
+    private Category transactionType;
+    private String description;
 
     //constructor
     // REQUIRES: amount > 0
@@ -16,7 +17,8 @@ public class Transaction {
         this.title = "Give it a name";
         this.date = LocalDate.of(2023, 1, 1);
         this.amount = 0;
-        this.category = "General";
+        this.transactionType = Category.EXPENSE;
+        this.description = "untitled";
     }
 
     public int getAmount() {
@@ -27,11 +29,27 @@ public class Transaction {
         return title;
     }
 
-    public String getCategory() {
-        return category;
+    public Enum<Category> getTransactionType() {
+        return transactionType;
     }
 
     public LocalDate getDate() {
         return date;
+    }
+
+    public void setAmount(int x) {
+        this.amount = x;
+    }
+
+    public void setTitle(String transactionName) {
+        this.title = transactionName;
+    }
+
+    public void setTransactionType(Enum type) {
+        this.transactionType = (Category) type;
+    }
+
+    public void setDate(LocalDate transactionDate) {
+        this.date = transactionDate;
     }
 }
