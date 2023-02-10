@@ -1,20 +1,17 @@
 package model;
 
-public class Earnings {
-    //fields
-    private String title;
-    private char date;
-    private int amount;
-    private String category;
+import java.time.LocalDate;
 
-    //constructor
-    // REQUIRES: amount > 0
-    // EFFECTS: creates earning  with a generic title, date, amount as 0, and category type.
-    public Earnings() {
-        this.title = "Give it a name";
-        this.date = 000000;
-        this.amount = 0;
-        this.category = "General";
+public class Earnings extends Transaction {
+    //fields
+    private int totalEarnings;
+
+
+    //REQUIRES: a non-zero amount
+    //MODIFIES: balance and totalEarnings
+    //EFFECTS: Increases balance and totalEarnings by amount.
+    public void depositEarnings(int amount) {
+        totalEarnings = totalEarnings + amount;
     }
 
 }
