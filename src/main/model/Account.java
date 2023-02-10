@@ -11,6 +11,8 @@ public class Account {
     private int totalEarnings;
     private int totalExpense;
     private LinkedList<Transaction> transactionHistory;
+    private LinkedList<Transaction> earningsHistory;
+    private LinkedList<Transaction> expensesHistory;
 
 
     //constructor
@@ -29,9 +31,11 @@ public class Account {
     public void addTransaction(Transaction t) {
         transactionHistory.addFirst(t);
         if (t.getTransactionType() == Category.EXPENSE) {
+            expensesHistory.addFirst(t);
             balance = balance - t.getAmount();
             totalExpense = totalExpense + t.getAmount();
         } else {
+            earningsHistory.addFirst(t);
             balance = balance + t.getAmount();
             totalEarnings = totalEarnings + t.getAmount();
         }
