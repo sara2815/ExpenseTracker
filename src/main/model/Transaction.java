@@ -13,12 +13,12 @@ public class Transaction {
     //constructor
     // REQUIRES: amount > 0
     // EFFECTS: creates earning  with a generic title, date, amount as 0, and category type.
-    public Transaction() {
-        this.title = "Give it a name";
-        this.date = LocalDate.of(2023, 1, 1);
-        this.amount = 0;
-        this.transactionType = Category.EXPENSE;
-        this.description = "untitled";
+    public Transaction(String name, LocalDate date, int amount, String description, Category type) {
+        this.title = name;
+        this.date = date;
+        this.amount = amount;
+        this.transactionType = type;
+        this.description = description;
     }
 
     public int getAmount() {
