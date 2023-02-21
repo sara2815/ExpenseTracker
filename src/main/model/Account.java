@@ -28,7 +28,7 @@ public class Account {
         transactionHistory = new LinkedList<Transaction>();
     }
 
-    public Account(Scanner accountName, double i) {
+    public Account(String accountName, double i) {
     }
 
     //REQUIRES: nothing

@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Transaction {
     //fields
     private String title;
-    private LocalDate date;
+    private int date;
     private double amount;
     private Category transactionType;
     private String description;
@@ -13,7 +13,7 @@ public class Transaction {
     //constructor
     // REQUIRES: amount > 0
     // EFFECTS: creates earning  with a generic title, date, amount as 0, and category type.
-    public Transaction(String name, LocalDate date, double amount, String description, Category type) {
+    public Transaction(String name, int date, double amount, String description, Category type) {
         this.title = name;
         this.date = date;
         this.amount = amount;
@@ -33,7 +33,7 @@ public class Transaction {
         return transactionType;
     }
 
-    public LocalDate getDate() {
+    public int getDate() {
         return date;
     }
 
@@ -49,7 +49,7 @@ public class Transaction {
         this.transactionType = (Category) type;
     }
 
-    public void setDate(LocalDate transactionDate) {
-        this.date = transactionDate;
+    public void setDate(int transactionMonth) {
+        this.date = transactionMonth;
     }
 }

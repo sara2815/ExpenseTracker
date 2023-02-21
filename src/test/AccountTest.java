@@ -21,11 +21,11 @@ public class AccountTest {
     @BeforeEach
     void runBefore() {
         a1 = new Account("Aarushi");
-        t1 = new Transaction("tuition", LocalDate.now(), 200, "Expensive", Category.EXPENSE);
-        t2 = new Transaction("job", LocalDate.now(), 800, "Expensive", Category.EARNING);
-        t3 = new Transaction("friends", LocalDate.now(), 200, "Owed Money to Lisa",
+        t1 = new Transaction("tuition", 1, 200, "Expensive", Category.EXPENSE);
+        t2 = new Transaction("job", 2, 800, "Expensive", Category.EARNING);
+        t3 = new Transaction("friends", 3, 200, "Owed Money to Lisa",
                 Category.EXPENSE);
-        t4 = new Transaction("biryani", LocalDate.now(), 400, "bought takeout",
+        t4 = new Transaction("biryani", 4, 400, "bought takeout",
                 Category.EXPENSE);
     }
 
