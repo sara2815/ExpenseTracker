@@ -1,10 +1,6 @@
 package model;
 
-import java.time.LocalDate;
 import java.util.LinkedList;
-import java.util.Scanner;
-
-import model.Transaction;
 
 public class Account {
 
@@ -28,8 +24,6 @@ public class Account {
         transactionHistory = new LinkedList<Transaction>();
     }
 
-    public Account(String accountName, double i) {
-    }
 
     //REQUIRES: nothing
     //MODIFIES: transactionHistory, balance and either totalEarnings or totalExpense.
