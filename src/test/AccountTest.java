@@ -45,11 +45,11 @@ public class AccountTest {
         //check expensesHistory
         assertEquals(a1.getExpensesHistory().size(), 1);
         //check balance
-        assertEquals(a1.getBalance(), 0 - t1.getAmount());
+        assertEquals(a1.getBalance(), 0.0 - t1.getAmount());
         //check totalExpense
         assertEquals(a1.getTotalExpense(), t1.getAmount());
         //check totalEarnings, should be 0
-        assertEquals(a1.getTotalEarnings(), 0);
+        assertEquals(a1.getTotalEarnings(), 0.0);
 
     }
 
@@ -93,9 +93,9 @@ public class AccountTest {
         //check that list size
         int dummyVariable = a1.getTransactionHistory().size();
         //check balance
-        int dummyBalance = a1.getBalance();
-        int prevExpenseTotal = a1.getTotalExpense();
-        int prevEarningTotal = a1.getTotalEarnings();
+        double dummyBalance = a1.getBalance();
+        double prevExpenseTotal = a1.getTotalExpense();
+        double prevEarningTotal = a1.getTotalEarnings();
         //add transaction of expense type
         a1.addTransaction(t1);
         //check transactionHistory has added t1
@@ -126,9 +126,9 @@ public class AccountTest {
         //check that list size
         int dummyVariable = a1.getTransactionHistory().size();
         //check balance
-        int dummyBalance = a1.getBalance();
-        int prevExpenseTotal = a1.getTotalExpense();
-        int prevEarningTotal = a1.getTotalEarnings();
+        double dummyBalance = a1.getBalance();
+        double prevExpenseTotal = a1.getTotalExpense();
+        double prevEarningTotal = a1.getTotalEarnings();
         //add transaction of expense type
         a1.addTransaction(t2);
         //check transactionHistory has added t2

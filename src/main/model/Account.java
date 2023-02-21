@@ -2,6 +2,7 @@ package model;
 
 import java.time.LocalDate;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 import model.Transaction;
 
@@ -9,9 +10,9 @@ public class Account {
 
     //fields
     private String userName;
-    private int balance;
-    private int totalEarnings;
-    private int totalExpense;
+    private double balance;
+    private double totalEarnings;
+    private double totalExpense;
     private LinkedList<Transaction> transactionHistory;
     private LinkedList<Transaction> earningsHistory;
     private LinkedList<Transaction> expensesHistory;
@@ -21,10 +22,13 @@ public class Account {
 //EFFECTS: Constructs a new account with a userName of "No Name", a balance of 0 and an empty transaction history.
     public Account(String name) {
         this.userName = name;
-        this.balance = 0;
+        this.balance = 0.0;
         expensesHistory = new LinkedList<Transaction>();
         earningsHistory = new LinkedList<Transaction>();
         transactionHistory = new LinkedList<Transaction>();
+    }
+
+    public Account(Scanner accountName, double i) {
     }
 
     //REQUIRES: nothing
@@ -57,15 +61,15 @@ public class Account {
 
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public int getTotalEarnings() {
+    public double getTotalEarnings() {
         return totalEarnings;
     }
 
-    public int getTotalExpense() {
+    public double getTotalExpense() {
         return totalExpense;
     }
 
