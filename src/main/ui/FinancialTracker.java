@@ -4,12 +4,11 @@ import model.Account;
 import model.Category;
 import model.Transaction;
 
-import java.time.LocalDate;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class FinancialTracker {
     private Scanner input;
+    private Scanner input2;
     private Account acc;
 
 
@@ -114,33 +113,60 @@ public class FinancialTracker {
     // EFFECTS: conducts a deposit transaction
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private void makeTransaction() {
-        System.out.println("Please enter a name or title for this transaction");
-        String title = input.nextLine();
+        System.out.println("Please enter a name for this transaction.");
+        double prevBalance = acc.getBalance();
+        String title = insertWords();
+        int month = 0;
+        String desc = "";
         System.out.print("Enter amount to deposit: $");
         double amount = input.nextDouble();
-        System.out.print("If this is an expense, enter A. If it is an earning enter B.");
-        String category = input.nextLine();
+        Category category = selectCategory();
         System.out.println("Please enter the month the transaction was made in as a number. Ie January -> 1, "
                 + "February -> 2 etc.");
-        int month = input.nextInt();
+        month = input.nextInt();
         System.out.println("Please enter a description of your transaction. If you do not want to, enter -> no");
-        String desc = input.nextLine();
+        desc = insertWords();
         if (amount < 0.0) {
             System.out.println("Cannot deposit negative amount...\n");
-        }
-        if (desc == "no") {
-            desc = "no description";
-        }
-        if (category == "A") {
-            Transaction t = new Transaction(title, month, amount, desc,
-                    Category.EXPENSE);
-            acc.addTransaction(t);
         } else {
-            Transaction t = new Transaction(title, month, amount, desc,
-                    Category.EARNING);
-
+            Transaction t = new Transaction(title, month, amount, desc, category);
             acc.addTransaction(t);
+            System.out.println("\nYour previous balance was: $"
+                    + prevBalance + "\t Your current balance, after making transaction is: $" + acc.getBalance());
+
         }
     }
 
+    private Category selectCategory() {
+        String category = "";
+        while (category.equals("")) {
+            System.out.print("If this is an expense, enter A. If it is an earning enter B.");
+            category = input.next();
+            category = category.toLowerCase();
+        }
+        if (category.equals("A")) {
+            return Category.EXPENSE;
+        } else if (category.equals("B")) {
+            return Category.EARNING;
+        } else {
+            System.out.println("Selection did not match options. Choosing default option of expense.");
+            return Category.EXPENSE;
+        }
+    }
+
+    private String insertWords() {
+        String title = "";
+
+        while (title.equals("")) {
+            title = input.next();
+            title = title.toLowerCase();
+        }
+        if (title.equals("no")) {
+            return "untitled";
+        } else {
+            return title;
+        }
+    }
 }
+
+
