@@ -19,7 +19,7 @@ public class AccountTest {
 
     @BeforeEach
     void runBefore() {
-        a1 = new Account("Aarushi");
+        a1 = new Account("Aarushi", 0);
         t1 = new Transaction("tuition", 1, 200, "Expensive", Category.EXPENSE);
         t2 = new Transaction("job", 2, 800, "Expensive", Category.EARNING);
         t3 = new Transaction("friends", 3, 200, "Owed Money to Lisa",

@@ -16,9 +16,9 @@ public class Account {
 
     //constructor
 //EFFECTS: Constructs a new account with a userName of "No Name", a balance of 0 and an empty transaction history.
-    public Account(String name) {
+    public Account(String name, int balance) {
         this.userName = name;
-        this.balance = 0.0;
+        this.balance = balance;
         expensesHistory = new LinkedList<Transaction>();
         earningsHistory = new LinkedList<Transaction>();
         transactionHistory = new LinkedList<Transaction>();
