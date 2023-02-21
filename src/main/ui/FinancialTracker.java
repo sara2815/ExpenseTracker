@@ -27,16 +27,13 @@ public class FinancialTracker {
 
         while (keepGoing) {
             displayMenu();
+            processNameCommand(command);
+            displaySecondMenu();
             command = input.next();
             command = command.toLowerCase();
-
             if (command.equals("quit")) {
                 keepGoing = false;
             } else {
-                processNameCommand(command);
-                displaySecondMenu();
-                command = input.next();
-                command = command.toLowerCase();
                 processCommand(command);
             }
         }
@@ -50,8 +47,6 @@ public class FinancialTracker {
     private void processNameCommand(String command) {
         String dummyAccountName = command;
         acc = new Account(command, 0);
-        input = new Scanner(System.in);
-        input.useDelimiter("\n");
     }
 
 
@@ -67,17 +62,34 @@ public class FinancialTracker {
         } else {
             System.out.println("User typo made or keyword doesn't match. Please try again!");
         }
-
     }
 
     private void doHistory() {
+        System.out.println("Here are all the transactions you have made in the past:");
+        acc.getTransactionHistory();
+        System.out.println("If you want to view only your expense history enter A. If you want to view"
+                + "only your earnings history, enter B. If you want to return to the Main Menu, enter C.");
+        String whichHistory = input.nextLine();
+        if (whichHistory.equals("A")) {
+            acc.getExpensesHistory();
+        } else if (whichHistory.equals("B")) {
+            acc.getEarningsHistory();
+        } else if (whichHistory.equals("C")) {
+            displaySecondMenu();
+        } else {
+            System.out.println("Selection does not match with options. Please try again!");
+        }
+
     }
 
     private void viewBalance() {
+        System.out.println("Your current balance is:" + acc.getBalance());
     }
 
 
     private void displayMenu() {
+        input = new Scanner(System.in);
+        input.useDelimiter("\n");
         System.out.println("\nHi! Welcome to our Financial Tracker!");
         System.out.println("\nPlease enter your name to view your Financial Tracker. Enter quit if you want to leave "
                 + "Financial Tracker.");
@@ -94,6 +106,7 @@ public class FinancialTracker {
 
     // MODIFIES: this
     // EFFECTS: conducts a deposit transaction
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private void makeTransaction() {
         System.out.println("Please enter a name or title for this transaction. "
                 + "This will help you find particular transactions later");
@@ -114,11 +127,14 @@ public class FinancialTracker {
             desc = "no description";
         }
         if (category == "A") {
-            Transaction transaction = new Transaction(title, month, amount, desc,
+            Transaction t = new Transaction(title, month, amount, desc,
                     Category.EXPENSE);
+            acc.addTransaction(t);
         } else {
-            Transaction transaction = new Transaction(title, month, amount, desc,
+            Transaction t = new Transaction(title, month, amount, desc,
                     Category.EARNING);
+
+            acc.addTransaction(t);
         }
     }
 
