@@ -24,17 +24,20 @@ public class FinancialTracker {
     private void runFinancialTracker() {
         boolean keepGoing = true;
         String command = null;
+        String newCommand = null;
 
         while (keepGoing) {
             displayMenu();
-            processNameCommand(command);
-            displaySecondMenu();
             command = input.next();
             command = command.toLowerCase();
-            if (command.equals("quit")) {
+            processNameCommand(command);
+            displaySecondMenu();
+            newCommand = input.next();
+            newCommand = newCommand.toLowerCase();
+            if (newCommand.equals("quit")) {
                 keepGoing = false;
             } else {
-                processCommand(command);
+                processCommand(newCommand);
             }
         }
         System.out.println("\nGoodbye! Thank you for visiting our FinancialTracker!");
@@ -52,12 +55,12 @@ public class FinancialTracker {
 
     // MODIFIES: this
     // EFFECTS: processes user command
-    private void processCommand(String command) {
-        if (command.equals("transaction")) {
+    private void processCommand(String newCommand) {
+        if (newCommand.equals("transaction")) {
             makeTransaction();
-        } else if (command.equals("balance")) {
+        } else if (newCommand.equals("balance")) {
             viewBalance();
-        } else if (command.equals("history")) {
+        } else if (newCommand.equals("history")) {
             doHistory();
         } else {
             System.out.println("User typo made or keyword doesn't match. Please try again!");
@@ -65,25 +68,29 @@ public class FinancialTracker {
     }
 
     private void doHistory() {
-        System.out.println("Here are all the transactions you have made in the past:");
-        acc.getTransactionHistory();
-        System.out.println("If you want to view only your expense history enter A. If you want to view"
-                + "only your earnings history, enter B. If you want to return to the Main Menu, enter C.");
-        String whichHistory = input.nextLine();
-        if (whichHistory.equals("A")) {
-            acc.getExpensesHistory();
-        } else if (whichHistory.equals("B")) {
-            acc.getEarningsHistory();
-        } else if (whichHistory.equals("C")) {
-            displaySecondMenu();
+        if (acc.getTransactionHistory() == null) {
+            System.out.println("You have no past transactions.");
         } else {
-            System.out.println("Selection does not match with options. Please try again!");
-        }
+            System.out.println("Here are all the transactions you have made in the past:");
+            acc.getTransactionHistory();
+            System.out.println("If you want to view only your expense history enter A. If you want to view"
+                    + "only your earnings history, enter B. If you want to return to the Main Menu, enter C.");
+            String whichHistory = input.nextLine();
+            if (whichHistory.equals("A")) {
+                acc.getExpensesHistory();
+            } else if (whichHistory.equals("B")) {
+                acc.getEarningsHistory();
+            } else if (whichHistory.equals("C")) {
+                displaySecondMenu();
+            } else {
+                System.out.println("Selection does not match with options. Please try again!");
+            }
 
+        }
     }
 
     private void viewBalance() {
-        System.out.println("Your current balance is:" + acc.getBalance());
+        System.out.println("Your current balance is $" + acc.getBalance());
     }
 
 
@@ -91,8 +98,7 @@ public class FinancialTracker {
         input = new Scanner(System.in);
         input.useDelimiter("\n");
         System.out.println("\nHi! Welcome to our Financial Tracker!");
-        System.out.println("\nPlease enter your name to view your Financial Tracker. Enter quit if you want to leave "
-                + "Financial Tracker.");
+        System.out.println("\nPlease enter your name to view your Financial Tracker.");
     }
 
 
@@ -108,8 +114,7 @@ public class FinancialTracker {
     // EFFECTS: conducts a deposit transaction
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private void makeTransaction() {
-        System.out.println("Please enter a name or title for this transaction. "
-                + "This will help you find particular transactions later");
+        System.out.println("Please enter a name or title for this transaction");
         String title = input.nextLine();
         System.out.print("Enter amount to deposit: $");
         double amount = input.nextDouble();
