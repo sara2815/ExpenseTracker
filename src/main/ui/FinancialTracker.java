@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class FinancialTracker {
     private Scanner input;
-    private Scanner input2;
     private Account acc;
 
 
@@ -45,15 +44,14 @@ public class FinancialTracker {
 
 
     //MODIFIES: this
-    //EFFECTS: initializes  and processes name input to make new account.
+    //EFFECTS: processes name input to make new account and initializes balance as 0.
     private void processNameCommand(String command) {
-        String dummyAccountName = command;
         acc = new Account(command, 0);
     }
 
 
     // MODIFIES: this
-    // EFFECTS: processes user command
+    // EFFECTS: processes user commands on displaySecondMenu
     private void processCommand(String newCommand) {
         if (newCommand.equals("transaction")) {
             makeTransaction();
@@ -66,8 +64,10 @@ public class FinancialTracker {
         }
     }
 
+    //EFFECTS: produces the past transaction history of the user. User can choose to view specifically
+    // the earning or expense history as well if the transaction history is not empty.
     private void doHistory() {
-        if (acc.getTransactionHistory() == null) {
+        if (acc.getTransactionHistory().isEmpty()) {
             System.out.println("You have no past transactions.");
         } else {
             System.out.println("Here are all the transactions you have made in the past:");
@@ -88,11 +88,13 @@ public class FinancialTracker {
         }
     }
 
+    // EFFECTS: displays the current balance of the account.
     private void viewBalance() {
         System.out.println("Your current balance is $" + acc.getBalance());
     }
 
 
+    // EFFECTS: displays the menu to user prompting them to enter their name.
     private void displayMenu() {
         input = new Scanner(System.in);
         input.useDelimiter("\n");
@@ -100,7 +102,8 @@ public class FinancialTracker {
         System.out.println("\nPlease enter your name to view your Financial Tracker.");
     }
 
-
+    // EFFECTS: displays the menu to user prompting them to choose which course of action to undertake
+    //such as making a transaction, checking balance, viewing history or quiting.
     private void displaySecondMenu() {
         System.out.println("\nHi! Please enter one of the following keywords:");
         System.out.println("\ttransaction -> To make a new transaction ");
@@ -109,9 +112,8 @@ public class FinancialTracker {
         System.out.println("\tquit -> To exit the Financial Tracker application.");
     }
 
-    // MODIFIES: this
-    // EFFECTS: conducts a deposit transaction
-    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
+    // MODIFIES: account
+    // EFFECTS: conducts a deposit transaction, changing balance accordingly and adding transaction to account history.
     private void makeTransaction() {
         System.out.println("Please enter a name for this transaction.");
         double prevBalance = acc.getBalance();
@@ -121,8 +123,8 @@ public class FinancialTracker {
         System.out.print("Enter amount to deposit: $");
         double amount = input.nextDouble();
         Category category = selectCategory();
-        System.out.println("Please enter the month the transaction was made in as a number. Ie January -> 1, "
-                + "February -> 2 etc.");
+        System.out.println("\nPlease enter the month the transaction was made in as a number."
+                + "\nIe January -> 1 , February -> 2 etc.");
         month = input.nextInt();
         System.out.println("Please enter a description of your transaction. If you do not want to, enter -> no");
         desc = insertWords();
@@ -137,6 +139,7 @@ public class FinancialTracker {
         }
     }
 
+    // EFFECTS: selects the category of transaction based on user input
     private Category selectCategory() {
         String category = "";
         while (category.equals("")) {
@@ -144,9 +147,9 @@ public class FinancialTracker {
             category = input.next();
             category = category.toLowerCase();
         }
-        if (category.equals("A")) {
+        if (category.equals("a")) {
             return Category.EXPENSE;
-        } else if (category.equals("B")) {
+        } else if (category.equals("b")) {
             return Category.EARNING;
         } else {
             System.out.println("Selection did not match options. Choosing default option of expense.");
@@ -154,6 +157,7 @@ public class FinancialTracker {
         }
     }
 
+    //EFFECTS: Used to input words or description based on user input.
     private String insertWords() {
         String title = "";
 
