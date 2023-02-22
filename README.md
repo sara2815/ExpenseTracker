@@ -34,3 +34,6 @@ beneficial to me and to other students.
 - *Users are able to view only their expenditure history*
 - *Users are able to view only their earning history*
 - *Users are able to quit the Financial Tracker and leave*
+
+###Resources Used
+Teller App was used as a reference point to build UI. 
