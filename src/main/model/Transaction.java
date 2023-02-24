@@ -1,6 +1,7 @@
 package model;
 
-
+//Represents a singular transaction, be it expense or earning. Contains information about amount, date, type,
+//description and a title.
 public class Transaction {
     //fields
     private String title;

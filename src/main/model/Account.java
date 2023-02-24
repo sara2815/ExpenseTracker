@@ -1,6 +1,8 @@
 package model;
 
 import java.util.LinkedList;
+// Represents a user's account. Contains balance, expense and earning balances, transaction history and
+// history about expenses and earnings specifically.
 
 public class Account {
 

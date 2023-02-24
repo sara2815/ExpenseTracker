@@ -6,6 +6,8 @@ import model.Transaction;
 
 import java.util.Scanner;
 
+// Handles the user input based console system for the Financial tracker.
+
 public class FinancialTracker {
     private Scanner input;
     private Account acc;
@@ -157,6 +159,7 @@ public class FinancialTracker {
         }
     }
 
+    //REQUIRES: User must input some string in response.
     //EFFECTS: Used to input words or description based on user input.
     private String insertWords() {
         String title = "";
