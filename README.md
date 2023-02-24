@@ -26,7 +26,8 @@ beneficial to me and to other students.
 - *As a user, I want to be able to view only my expenditure history.*
 - *As a user, I want to be able to view only my earning history.*
 - *As a user, I want to be able to quit the FinancialTracker and leave*
-- *As a user, I want my transactions and history to be saved when I leave and be available when I re-join*
+- *As a user, I want my transactions and history to be saved when I leave, if I choose to.*
+- *As a user, I want to be able to given the option to load my past transactions from file.*
 ###User Stories Achieved in Phase 1
 - *Users are now able to create transactions.*
 - *Users are able to add these transactions to their accounts*
