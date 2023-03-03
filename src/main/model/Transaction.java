@@ -58,10 +58,14 @@ public class Transaction implements Writable {
 
     @Override
     public JSONObject toJson() {
-            JSONObject json = new JSONObject();
-            json.put("name", name);
-            json.put("category", category);
-            return json;
-        }
+
+        JSONObject json = new JSONObject();
+        json.put("title", title);
+        json.put("date", date);
+        json.put("amount", amount);
+        json.put("transactionType", transactionType);
+        json.put("date", date);
+        json.put("description", description);
+        return json;
     }
 }

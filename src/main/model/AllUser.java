@@ -30,13 +30,7 @@ public class AllUser {
     }
 
     //EFFECTS: produces the Account that we are looking for
-    public Account findUser(String s) {
-        for (Account a : allUsers) {
-            if (a.getName() == s) {
-                return a;
-            }
-        }
-    }
+
 
     // EFFECTS: returns accounts in this allUser as a JSON array
     public JSONArray accountsToJson() {
@@ -47,5 +41,9 @@ public class AllUser {
         }
 
         return jsonArray;
+    }
+
+    public void addAccount(Account a) {
+        allUsers.add(a);
     }
 }

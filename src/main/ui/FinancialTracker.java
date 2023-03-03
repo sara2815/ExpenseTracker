@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class FinancialTracker {
     private Scanner input;
     private Account acc;
+    private String nameCommand;
 
 
     //EFFECTS: run the financial tracker application
@@ -25,12 +26,12 @@ public class FinancialTracker {
         boolean keepGoing = true;
         String command = null;
         String newCommand = null;
+        displayMenu();
+        nameCommand = input.next();
+        processNameCommand(nameCommand);
+
 
         while (keepGoing) {
-            displayMenu();
-            command = input.next();
-            command = command.toLowerCase();
-            processNameCommand(command);
             displaySecondMenu();
             newCommand = input.next();
             newCommand = newCommand.toLowerCase();
@@ -175,5 +176,3 @@ public class FinancialTracker {
         }
     }
 }
-
-

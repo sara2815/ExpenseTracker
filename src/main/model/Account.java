@@ -21,10 +21,22 @@ public class Account implements Writable {
 
 
     //constructor
-//EFFECTS: Constructs a new account with a userName of "No Name", a balance of 0 and an empty transaction history.
-    public Account(String name, int balance) {
+//EFFECTS: Constructs a new account with given username and balance
+    public Account(String name, double balance) {
         this.userName = name;
         this.balance = balance;
+        expensesHistory = new LinkedList<Transaction>();
+        earningsHistory = new LinkedList<Transaction>();
+        transactionHistory = new LinkedList<Transaction>();
+    }
+
+    //constructor
+//EFFECTS: Constructs a new account with given username, balance and total earnings and expense
+    public Account(String name, double balance, double totalEarnings, double totalExpense) {
+        this.userName = name;
+        this.balance = balance;
+        this.totalEarnings = totalEarnings;
+        this.totalExpense = totalExpense;
         expensesHistory = new LinkedList<Transaction>();
         earningsHistory = new LinkedList<Transaction>();
         transactionHistory = new LinkedList<Transaction>();

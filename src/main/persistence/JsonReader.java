@@ -1,5 +1,6 @@
 package persistence;
 
+import model.AllUser;
 import model.Category;
 import model.Account;
 import model.Transaction;
@@ -24,10 +25,10 @@ public class JsonReader {
 
     // EFFECTS: reads account from file and returns it;
     // throws IOException if an error occurs reading data from file
-    public Account read() throws IOException {
+    public AllUser read() throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
-        return parseWorkRoom(jsonObject);
+        return parseAllUser(jsonObject);
     }
 
     // EFFECTS: reads source file as string and returns it
@@ -42,14 +43,30 @@ public class JsonReader {
     }
 
     // EFFECTS: parses account from JSON object and returns it
-    private Account parseWorkRoom(JSONObject jsonObject) {
+    private AllUser parseAllUser(JSONObject jsonObject) {
+        AllUser au = new AllUser();
+        addAccounts(au, jsonObject);
+        return au;
+    }
 
-        String userName = jsonObject.getString("userName");
-        int balance = jsonObject.getInt("balance");
-        Account a = new Account(userName, balance);
-        //do we do this for expenses history and earnings history too??
+    // MODIFIES: wr
+    // EFFECTS: parses thingies from JSON object and adds them to workroom
+    private void addAccounts(AllUser au, JSONObject jsonObject) {
+        JSONArray jsonArray = jsonObject.getJSONArray("allUsers");
+        for (Object json : jsonArray) {
+            JSONObject nextAccount = (JSONObject) json;
+            addAccount(au, nextAccount);
+        }
+    }
+
+    private void addAccount(AllUser au, JSONObject nextAccount) {
+        String userName = nextAccount.getString("userName");
+        double balance = nextAccount.getDouble("balance");
+        double totalEarnings = nextAccount.getDouble("totalEarnings");
+        double totalExpense = nextAccount.getDouble("totalExpense");
+        Account a = new Account(userName, balance, totalEarnings, totalExpense);
         addTransactions(a, jsonObject);
-        return a;
+        au.addAccount(a);
     }
 
     // MODIFIES: account
@@ -75,3 +92,4 @@ public class JsonReader {
         a.addTransaction(t);
     }
 }
+
