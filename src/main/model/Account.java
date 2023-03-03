@@ -1,10 +1,14 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.LinkedList;
 // Represents a user's account. Contains balance, expense and earning balances, transaction history and
 // history about expenses and earnings specifically.
 
-public class Account {
+public class Account implements Writable {
 
     //fields
     private String userName;
@@ -61,6 +65,10 @@ public class Account {
         return balance;
     }
 
+    public String getName() {
+        return userName;
+    }
+
     public double getTotalEarnings() {
         return totalEarnings;
     }
@@ -74,4 +82,52 @@ public class Account {
         return earningsHistory;
 
     }
+
+    @Override
+    public JSONObject toJson() {
+
+        JSONObject json = new JSONObject();
+        json.put("userName", userName);
+        json.put("balance", balance);
+        json.put("totalEarnings", totalEarnings);
+        json.put("totalExpense", totalExpense);
+        json.put("transactionHistory", transactionsToJson());
+        json.put("earningsHistory", earningsToJson());
+        json.put("expensesHistory", expensesToJson());
+        return json;
+    }
+
+    // EFFECTS: returns transactions in transactionHistory of Account as a JSON array
+    private JSONArray transactionsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Transaction t : transactionHistory) {
+            jsonArray.put(t.toJson());
+        }
+
+        return jsonArray;
+    }
+
+    // EFFECTS: returns earning transactions in earningsHistory of Account as a JSON array
+    private JSONArray earningsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Transaction e : earningsHistory) {
+            jsonArray.put(e.toJson());
+        }
+
+        return jsonArray;
+    }
+
+    // EFFECTS: returns expense transactions in expensesHistory of Account as a JSON array
+    private JSONArray expensesToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Transaction exp : expensesHistory) {
+            jsonArray.put(exp.toJson());
+        }
+
+        return jsonArray;
+    }
 }
+

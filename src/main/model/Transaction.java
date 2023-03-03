@@ -1,8 +1,11 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 //Represents a singular transaction, be it expense or earning. Contains information about amount, date, type,
 //description and a title.
-public class Transaction {
+public class Transaction implements Writable {
     //fields
     private String title;
     private int date;
@@ -51,5 +54,14 @@ public class Transaction {
 
     public void setDate(int transactionMonth) {
         this.date = transactionMonth;
+    }
+
+    @Override
+    public JSONObject toJson() {
+            JSONObject json = new JSONObject();
+            json.put("name", name);
+            json.put("category", category);
+            return json;
+        }
     }
 }
