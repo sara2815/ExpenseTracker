@@ -1,21 +1,34 @@
 package ui;
 
 import model.Account;
+import model.AllUser;
 import model.Category;
 import model.Transaction;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 // Handles the user input based console system for the Financial tracker.
 
 public class FinancialTracker {
+    private static final String JSON_STORE = "./data/FINANCIALTRACKER.json";
     private Scanner input;
+    private AllUser alluser;
     private Account acc;
     private String nameCommand;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
 
     //EFFECTS: run the financial tracker application
-    public FinancialTracker() {
+    public FinancialTracker() throws FileNotFoundException {
+        input = new Scanner(System.in);
+        AllUser allUser = new AllUser();
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runFinancialTracker();
     }
 
@@ -50,6 +63,7 @@ public class FinancialTracker {
     //EFFECTS: processes name input to make new account and initializes balance as 0.
     private void processNameCommand(String command) {
         acc = new Account(command, 0);
+        alluser.addAccount(acc);
     }
 
 
@@ -73,22 +87,44 @@ public class FinancialTracker {
         if (acc.getTransactionHistory().isEmpty()) {
             System.out.println("You have no past transactions.");
         } else {
-            System.out.println("Here are all the transactions you have made in the past:");
-            acc.getTransactionHistory();
-            System.out.println("If you want to view only your expense history enter A. If you want to view"
-                    + "only your earnings history, enter B. If you want to return to the Main Menu, enter C.");
-            String whichHistory = input.nextLine();
+            System.out.println("\t TRANSACTION HISTORY");
+            System.out.println("\n To view all past transactions --> A"
+                    + "\n To only view your expense history -- > B."
+                    + "\n To only view only your earnings history --> C"
+                    + "\n To return to the Main Menu -->  D.");
+            String whichHistory = input.next();
+            input.nextLine();
             if (whichHistory.equals("A")) {
-                acc.getExpensesHistory();
+                viewTransactions(acc.getTransactionHistory());
             } else if (whichHistory.equals("B")) {
-                acc.getEarningsHistory();
+                viewTransactions(acc.getExpensesHistory());
             } else if (whichHistory.equals("C")) {
+                viewTransactions(acc.getEarningsHistory());
+            } else if (whichHistory.equals("D")) {
                 displaySecondMenu();
             } else {
                 System.out.println("Selection does not match with options. Please try again!");
             }
 
         }
+    }
+
+    //EFFECTS: produces each transaction to user. Basically allows user to see a transaction.
+    private void viewTransactions(LinkedList<Transaction> transactions) {
+        for (Transaction t : transactions) {
+            String type = "";
+            if (t.getTransactionType() == Category.EXPENSE) {
+                type = "expense";
+            } else {
+                type = "earning";
+            }
+            System.out.println("\n Title:" + t.getTitle()
+                    + "\n Amount:" + t.getAmount()
+                    + "\n Month of Transaction: " + t.getDate()
+                    + "\n Description:" + t.getDescription()
+                    + "\n Type:" + type);
+        }
+
     }
 
     // EFFECTS: displays the current balance of the account.

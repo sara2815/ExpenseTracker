@@ -32,6 +32,10 @@ public class Transaction implements Writable {
         return title;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public Enum<Category> getTransactionType() {
         return transactionType;
     }

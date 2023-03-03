@@ -65,14 +65,13 @@ public class JsonReader {
         double totalEarnings = nextAccount.getDouble("totalEarnings");
         double totalExpense = nextAccount.getDouble("totalExpense");
         Account a = new Account(userName, balance, totalEarnings, totalExpense);
-        addTransactions(a, jsonObject);
+        addTransactions(a, nextAccount.getJSONArray("transactionHistory"));
         au.addAccount(a);
     }
 
     // MODIFIES: account
     // EFFECTS: parses transactions from the JSON object and adds them to the account
-    private void addTransactions(Account a, JSONObject jsonObject) {
-        JSONArray jsonArray = jsonObject.getJSONArray("transactionHistory");
+    private void addTransactions(Account a, JSONArray jsonArray) {
         for (Object json : jsonArray) {
             JSONObject nextTransaction = (JSONObject) json;
             addTransaction(a, nextTransaction);
