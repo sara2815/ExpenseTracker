@@ -62,6 +62,7 @@ public class FinancialTracker {
     //MODIFIES: this
     //EFFECTS: processes name input to make new account and initializes balance as 0.
     private void processNameCommand(String command) {
+        alluser = new AllUser();
         acc = new Account(command, 0);
         alluser.addAccount(acc);
     }
@@ -83,12 +84,13 @@ public class FinancialTracker {
 
     //EFFECTS: produces the past transaction history of the user. User can choose to view specifically
     // the earning or expense history as well if the transaction history is not empty.
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private void doHistory() {
         if (acc.getTransactionHistory().isEmpty()) {
             System.out.println("You have no past transactions.");
         } else {
-            System.out.println("\t TRANSACTION HISTORY");
-            System.out.println("\n To view all past transactions --> A"
+            System.out.println("\t TRANSACTION HISTORY"
+                    + "\n To view all past transactions --> A"
                     + "\n To only view your expense history -- > B."
                     + "\n To only view only your earnings history --> C"
                     + "\n To return to the Main Menu -->  D.");
@@ -97,15 +99,22 @@ public class FinancialTracker {
             if (whichHistory.equals("A")) {
                 viewTransactions(acc.getTransactionHistory());
             } else if (whichHistory.equals("B")) {
-                viewTransactions(acc.getExpensesHistory());
+                if (acc.getExpensesHistory().isEmpty()) {
+                    System.out.println("You have no past expenses.");
+                } else {
+                    viewTransactions(acc.getExpensesHistory());
+                }
             } else if (whichHistory.equals("C")) {
-                viewTransactions(acc.getEarningsHistory());
+                if (acc.getEarningsHistory().isEmpty()) {
+                    System.out.println("You have no past earnings.");
+                } else {
+                    viewTransactions(acc.getEarningsHistory());
+                }
             } else if (whichHistory.equals("D")) {
                 displaySecondMenu();
             } else {
                 System.out.println("Selection does not match with options. Please try again!");
             }
-
         }
     }
 
