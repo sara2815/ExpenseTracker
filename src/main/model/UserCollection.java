@@ -4,16 +4,18 @@ import java.util.LinkedList;
 
 import model.Account;
 import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
 
 // Represents all users that have used the financial tracker.
-public class AllUser {
+public class UserCollection implements Writable {
     //fields
     private LinkedList<Account> allUsers;
 
 
     //constructor
 //EFFECTS: Constructs a new list of all users.
-    public AllUser() {
+    public UserCollection() {
         allUsers = new LinkedList<Account>();
     }
 
@@ -29,7 +31,12 @@ public class AllUser {
         allUsers.remove(a);
     }
 
-    //EFFECTS: produces the Account that we are looking for
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("allUsers", accountsToJson());
+        return json;
+    }
 
 
     // EFFECTS: returns accounts in this allUser as a JSON array
@@ -41,6 +48,10 @@ public class AllUser {
         }
 
         return jsonArray;
+    }
+
+    public LinkedList<Account> getAllUsers() {
+        return allUsers;
     }
 
     public void addAccount(Account a) {

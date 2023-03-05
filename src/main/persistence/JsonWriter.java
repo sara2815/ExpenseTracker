@@ -1,8 +1,8 @@
 package persistence;
 
-import model.Account;
-import model.AllUser;
+import model.UserCollection;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 
 import java.io.*;
@@ -28,8 +28,8 @@ public class JsonWriter {
     //TODO:
     // MODIFIES: this
     // EFFECTS: writes JSON representation of account to file
-    public void write(AllUser au) {
-        JSONArray json = au.accountsToJson();
+    public void write(UserCollection au) {
+        JSONObject json = au.toJson();
         saveToFile(json.toString(TAB));
     }
 

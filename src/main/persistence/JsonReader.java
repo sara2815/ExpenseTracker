@@ -1,6 +1,6 @@
 package persistence;
 
-import model.AllUser;
+import model.UserCollection;
 import model.Category;
 import model.Account;
 import model.Transaction;
@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.LinkedList;
 import java.util.stream.Stream;
 
 import org.json.*;
@@ -25,7 +24,7 @@ public class JsonReader {
 
     // EFFECTS: reads account from file and returns it;
     // throws IOException if an error occurs reading data from file
-    public AllUser read() throws IOException {
+    public UserCollection read() throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
         return parseAllUser(jsonObject);
@@ -43,15 +42,15 @@ public class JsonReader {
     }
 
     // EFFECTS: parses account from JSON object and returns it
-    private AllUser parseAllUser(JSONObject jsonObject) {
-        AllUser au = new AllUser();
+    private UserCollection parseAllUser(JSONObject jsonObject) {
+        UserCollection au = new UserCollection();
         addAccounts(au, jsonObject);
         return au;
     }
 
     // MODIFIES: wr
     // EFFECTS: parses thingies from JSON object and adds them to workroom
-    private void addAccounts(AllUser au, JSONObject jsonObject) {
+    private void addAccounts(UserCollection au, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("allUsers");
         for (Object json : jsonArray) {
             JSONObject nextAccount = (JSONObject) json;
@@ -59,7 +58,7 @@ public class JsonReader {
         }
     }
 
-    private void addAccount(AllUser au, JSONObject nextAccount) {
+    private void addAccount(UserCollection au, JSONObject nextAccount) {
         String userName = nextAccount.getString("userName");
         double balance = nextAccount.getDouble("balance");
         double totalEarnings = nextAccount.getDouble("totalEarnings");
@@ -81,13 +80,13 @@ public class JsonReader {
     // MODIFIES: account
     // EFFECTS: parses transaction from JSON object and adds it to the account
     private void addTransaction(Account a, JSONObject jsonObject) {
-        String name = jsonObject.getString("name");
+        String name = jsonObject.getString("title");
         int date = jsonObject.getInt("date");
         double amount = jsonObject.getDouble("amount");
         String description = jsonObject.getString("description");
-        Category type = Category.valueOf(jsonObject.getString("category"));
+        Category category = Category.valueOf(jsonObject.getString("transactionType"));
         Transaction t =
-                new Transaction(name, date, amount, description, type);
+                new Transaction(name, date, amount, description, category);
         a.addTransaction(t);
     }
 }

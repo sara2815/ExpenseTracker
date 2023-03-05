@@ -1,0 +1,21 @@
+{"allUsers": [{
+    "totalEarnings": 6000,
+    "balance": 6000,
+    "earningsHistory": [{
+        "date": 4,
+        "transactionType": "EARNING",
+        "amount": 2000,
+        "description": "i wanted some",
+        "title": "clothes"
+    }],
+    "transactionHistory": [{
+        "date": 4,
+        "transactionType": "EARNING",
+        "amount": 2000,
+        "description": "i wanted some",
+        "title": "clothes"
+    }],
+    "expensesHistory": [],
+    "userName": "adyesha",
+    "totalExpense": 0
+}]}

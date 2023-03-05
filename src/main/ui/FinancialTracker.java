@@ -1,7 +1,7 @@
 package ui;
 
 import model.Account;
-import model.AllUser;
+import model.UserCollection;
 import model.Category;
 import model.Transaction;
 import persistence.JsonReader;
@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class FinancialTracker {
     private static final String JSON_STORE = "./data/FINANCIALTRACKER.json";
     private Scanner input;
-    private AllUser alluser;
+    private UserCollection alluser;
     private Account acc;
     private String nameCommand;
     private JsonWriter jsonWriter;
@@ -27,7 +27,7 @@ public class FinancialTracker {
     //EFFECTS: run the financial tracker application
     public FinancialTracker() throws FileNotFoundException {
         input = new Scanner(System.in);
-        alluser = new AllUser();
+        alluser = new UserCollection();
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         runFinancialTracker();
@@ -63,8 +63,12 @@ public class FinancialTracker {
     //MODIFIES: this
     //EFFECTS: processes name input to make new account and initializes balance as 0.
     private void processNameCommand(String command) {
-        alluser = new AllUser();
         acc = new Account(command, 0);
+        for (Account account : alluser.getAllUsers()) {
+            if (account.getName() == command) {
+                acc = account;
+            }
+        }
         alluser.addAccount(acc);
     }
 
