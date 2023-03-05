@@ -8,6 +8,7 @@ import persistence.JsonReader;
 import persistence.JsonWriter;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -26,7 +27,7 @@ public class FinancialTracker {
     //EFFECTS: run the financial tracker application
     public FinancialTracker() throws FileNotFoundException {
         input = new Scanner(System.in);
-        AllUser allUser = new AllUser();
+        alluser = new AllUser();
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         runFinancialTracker();
@@ -77,6 +78,10 @@ public class FinancialTracker {
             viewBalance();
         } else if (newCommand.equals("history")) {
             doHistory();
+        } else if (newCommand.equals("save")) {
+            saveAllUser();
+        } else if (newCommand.equals("load")) {
+            loadAllUser();
         } else {
             System.out.println("User typo made or keyword doesn't match. Please try again!");
         }
@@ -157,6 +162,8 @@ public class FinancialTracker {
         System.out.println("\ttransaction -> To make a new transaction ");
         System.out.println("\tbalance -> To view your current balance");
         System.out.println("\thistory -> To view your past transaction history");
+        System.out.println("\tsave -> To save your recent changes");
+        System.out.println("\tload -> To load your previous changes back.");
         System.out.println("\tquit -> To exit the Financial Tracker application.");
     }
 
@@ -218,6 +225,30 @@ public class FinancialTracker {
             return "untitled";
         } else {
             return title;
+        }
+    }
+
+
+    // EFFECTS: saves the account to file
+    private void saveAllUser() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(alluser);
+            jsonWriter.close();
+            System.out.println("Saved " + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads allUser from file
+    private void loadAllUser() {
+        try {
+            alluser = jsonReader.read();
+            System.out.println("Loaded " + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
 }
