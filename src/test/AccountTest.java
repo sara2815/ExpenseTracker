@@ -6,11 +6,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
+import java.util.LinkedList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AccountTest {
     Account a1;
+    Account a2;
     Transaction t1;
     Transaction t2;
     Transaction t3;
@@ -20,6 +23,7 @@ public class AccountTest {
     @BeforeEach
     void runBefore() {
         a1 = new Account("Aarushi", 0);
+        a2 = new Account("Adyesha", 0, 0, 0);
         t1 = new Transaction("tuition", 1, 200, "Expensive", Category.EXPENSE);
         t2 = new Transaction("job", 2, 800, "Expensive", Category.EARNING);
         t3 = new Transaction("friends", 3, 200, "Owed Money to Lisa",
@@ -33,23 +37,30 @@ public class AccountTest {
     //TODO: Outcome transaction history has one item, expensesHistory has one item, totalExpenses is increased by
     // transaction amount and balance is now reduced by amount (should be negative).
     public void TestAddTransactionEmptyExpense() {
+        //check if account has been instantiated correctly
+        assertEquals(a1.getName(), "Aarushi");
+        assertEquals(a2.getName(), "Adyesha");
         //check transactions type
         assertEquals(t1.getTransactionType(), Category.EXPENSE);
         //check that list is empty
         assertEquals(a1.getTransactionHistory().size(), 0);
         //add transaction
         a1.addTransaction(t1);
+        a2.addTransaction(t1);
         //check transactionHistory
         assertEquals(a1.getTransactionHistory().size(), 1);
+        assertEquals(a2.getTransactionHistory().size(), 1);
         //check expensesHistory
         assertEquals(a1.getExpensesHistory().size(), 1);
+        assertEquals(a2.getExpensesHistory().size(), 1);
         //check balance
         assertEquals(a1.getBalance(), 0.0 - t1.getAmount());
+        assertEquals(a2.getBalance(), 0.0 - t1.getAmount());
         //check totalExpense
         assertEquals(a1.getTotalExpense(), t1.getAmount());
         //check totalEarnings, should be 0
         assertEquals(a1.getTotalEarnings(), 0.0);
-
+        assertEquals(a2.getTotalEarnings(), 0.0);
     }
 
     @Test
@@ -143,4 +154,6 @@ public class AccountTest {
         assertEquals(a1.getTotalEarnings(), prevExpenseTotal);
 
     }
+
+
 }
