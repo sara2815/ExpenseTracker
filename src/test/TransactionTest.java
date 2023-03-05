@@ -48,6 +48,15 @@ public class TransactionTest {
     }
 
     @Test
+// TODO:TestGetDescription
+    //TODO: Returns Transaction descirption
+    public void TestGetDescription() {
+        //check transactions type
+        assertEquals(t3.getDescription(), "Owed Money to Lisa");
+        assertEquals(t2.getDescription(), "Expensive");
+    }
+
+    @Test
 // TODO:TestGetDate
     //TODO: Returns the month that transaction was made in
     public void TestGetDate() {
