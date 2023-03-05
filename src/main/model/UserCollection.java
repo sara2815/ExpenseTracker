@@ -53,8 +53,4 @@ public class UserCollection implements Writable {
     public LinkedList<Account> getAllUsers() {
         return allUsers;
     }
-
-    public void addAccount(Account a) {
-        allUsers.add(a);
-    }
 }

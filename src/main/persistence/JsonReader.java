@@ -65,7 +65,7 @@ public class JsonReader {
         double totalExpense = nextAccount.getDouble("totalExpense");
         Account a = new Account(userName, balance, totalEarnings, totalExpense);
         addTransactions(a, nextAccount.getJSONArray("transactionHistory"));
-        au.addAccount(a);
+        au.addUser(a);
     }
 
     // MODIFIES: account

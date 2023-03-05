@@ -69,7 +69,7 @@ public class FinancialTracker {
                 acc = account;
             }
         }
-        alluser.addAccount(acc);
+        alluser.addUser(acc);
     }
 
 
