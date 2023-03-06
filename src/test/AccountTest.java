@@ -2,6 +2,7 @@
 import model.Account;
 import model.Category;
 import model.Transaction;
+import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -88,7 +89,8 @@ public class AccountTest {
         assertEquals(a1.getTotalExpense(), 0);
 
     }
-@Test
+
+    @Test
     // TODO:TestAddTransactionExpenseMultiple adds transaction of Expense type to list with multiple existing transactions
     //TODO: of different types.
     //TODO: Outcome transaction history should add an additional item, balance should be decreased by Expense,
@@ -121,7 +123,8 @@ public class AccountTest {
         assertEquals(a1.getTotalEarnings(), prevEarningTotal);
 
     }
-@Test
+
+    @Test
     // TODO:TestAddTransactionEarningMultiple adds transaction of Earning type to list with multiple existing transactions
     //TODO: of different types.
     //TODO: Outcome transaction history should add an additional item, balance should be increase by Expense,
@@ -155,5 +158,12 @@ public class AccountTest {
 
     }
 
+    @Test
+    // TODO:TestToJson
+    public void TestToJson() {
+        assertEquals("{\"totalEarnings\":0,\"balance\":0,\"earningsHistory\":[]," +
+                "\"transactionHistory\":[],\"expensesHistory\":[],\"userName\":\"Adyesha\"," +
+                "\"totalExpense\":0}", a2.toJson().toString());
 
+    }
 }
