@@ -88,7 +88,7 @@ public class AccountTest {
         assertEquals(a1.getTotalExpense(), 0);
 
     }
-
+@Test
     // TODO:TestAddTransactionExpenseMultiple adds transaction of Expense type to list with multiple existing transactions
     //TODO: of different types.
     //TODO: Outcome transaction history should add an additional item, balance should be decreased by Expense,
@@ -121,7 +121,7 @@ public class AccountTest {
         assertEquals(a1.getTotalEarnings(), prevEarningTotal);
 
     }
-
+@Test
     // TODO:TestAddTransactionEarningMultiple adds transaction of Earning type to list with multiple existing transactions
     //TODO: of different types.
     //TODO: Outcome transaction history should add an additional item, balance should be increase by Expense,

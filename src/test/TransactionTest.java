@@ -110,6 +110,6 @@ public class TransactionTest {
         t3.setDate(12);
         //check if amount has successfully been set.
         assertEquals(t3.getDate(), 12);
-    }/**/
+    }
 }
 
