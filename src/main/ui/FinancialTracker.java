@@ -93,42 +93,33 @@ public class FinancialTracker {
 
     //EFFECTS: produces the past transaction history of the user. User can choose to view specifically
     // the earning or expense history as well if the transaction history is not empty.
-    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private void doHistory() {
         if (acc.getTransactionHistory().isEmpty()) {
             System.out.println("You have no past transactions.");
         } else {
-            System.out.println("\t TRANSACTION HISTORY"
-                    + "\n To view all past transactions --> A"
-                    + "\n To only view your expense history -- > B."
-                    + "\n To only view only your earnings history --> C"
-                    + "\n To return to the Main Menu -->  D.");
+            System.out.println("\t TRANSACTION HISTORY" + "\n A -> To view all past transactions -->"
+                    + "\n B -> To view expense history." + "\n C -> To view earning history"
+                    + "\n D -> To return to the Main Menu");
             String whichHistory = input.next();
             input.nextLine();
-            switch (whichHistory) {
-                case "A":
-                    viewTransactions(acc.getTransactionHistory());
-                    break;
-                case "B":
-                    if (acc.getExpensesHistory().isEmpty()) {
-                        System.out.println("You have no past expenses.");
-                    } else {
-                        viewTransactions(acc.getExpensesHistory());
-                    }
-                    break;
-                case "C":
-                    if (acc.getEarningsHistory().isEmpty()) {
-                        System.out.println("You have no past earnings.");
-                    } else {
-                        viewTransactions(acc.getEarningsHistory());
-                    }
-                    break;
-                case "D":
-                    displaySecondMenu();
-                    break;
-                default:
-                    System.out.println("Selection does not match with options. Please try again!");
-                    break;
+            if (whichHistory.equals("A")) {
+                viewTransactions(acc.getTransactionHistory());
+            } else if (whichHistory.equals("B")) {
+                if (acc.getExpensesHistory().isEmpty()) {
+                    System.out.println("You have no past expenses.");
+                } else {
+                    viewTransactions(acc.getExpensesHistory());
+                }
+            } else if (whichHistory.equals("C")) {
+                if (acc.getEarningsHistory().isEmpty()) {
+                    System.out.println("You have no past earnings.");
+                } else {
+                    viewTransactions(acc.getEarningsHistory());
+                }
+            } else if (whichHistory.equals("D")) {
+                displaySecondMenu();
+            } else {
+                System.out.println("Selection does not match with options. Please try again!");
             }
         }
     }
