@@ -166,4 +166,29 @@ public class AccountTest {
                 "\"totalExpense\":0}", a2.toJson().toString());
 
     }
+
+    @Test
+    // TODO:TestTransactionsToJson
+    public void TestTransactionToJson() {
+        a2.addTransaction(t1);
+        assertEquals("{\"date\":1,\"transactionType\":\"EXPENSE\",\"amount\":200,\"description\":\"Expensive\"," +
+                "\"title\":\"tuition\"}", a2.getTransactionHistory().get(0).toJson().toString());
+
+    }
+    @Test
+    // TODO:TestEarningsToJson
+    public void TestEarningsToJson() {
+        a2.addTransaction(t2);
+        assertEquals("{\"date\":2,\"transactionType\":\"EARNING\",\"amount\":800,\"description\":\"Expensive\"," +
+                "\"title\":\"job\"}", a2.getEarningsHistory().get(0).toJson().toString());
+
+    }
+
+    @Test
+    // TODO:TestExpensesToJson
+    public void TestExpensesToJson() {
+        a2.addTransaction(t4);
+        assertEquals("{\"date\":4,\"transactionType\":\"EXPENSE\",\"amount\":400,\"description\":" +
+                "\"bought takeout\"," + "\"title\":\"biryani\"}", a2.getExpensesHistory().get(0).toJson().toString());
+    }
 }
