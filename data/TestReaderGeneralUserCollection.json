@@ -1,0 +1,21 @@
+{"allUsers": [{
+  "totalEarnings": 20,
+  "balance": 20,
+  "earningsHistory": [{
+    "date": 1,
+    "transactionType": "EARNING",
+    "amount": 20,
+    "description": "untitled",
+    "title": "clothes"
+  }],
+  "transactionHistory": [{
+    "date": 1,
+    "transactionType": "EARNING",
+    "amount": 20,
+    "description": "untitled",
+    "title": "clothes"
+  }],
+  "expensesHistory": [],
+  "userName": "adyesha",
+  "totalExpense": 0
+}]}
