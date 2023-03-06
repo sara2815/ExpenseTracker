@@ -1,0 +1,9 @@
+{"allUsers": [{
+  "totalEarnings": 0,
+  "balance": 0,
+  "earningsHistory": [],
+  "transactionHistory": [],
+  "expensesHistory": [],
+  "userName": "name",
+  "totalExpense": 0
+}]}

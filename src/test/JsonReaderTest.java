@@ -45,9 +45,10 @@ public class JsonReaderTest extends JsonTest {
             List<Account> accounts = uc.getAllUsers();
             assertEquals(1, accounts.size());
             checkAccount("adyesha", 20, 20, 0, uc.getAllUsers().get(0));
+            checkTransaction("clothes", 1, 20, "untitled", Category.EARNING,
+                    uc.getAllUsers().get(0).getTransactionHistory().get(0));
         } catch (IOException e) {
             fail("Couldn't read from file");
         }
     }
-
 }

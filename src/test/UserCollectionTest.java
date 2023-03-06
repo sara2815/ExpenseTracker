@@ -41,7 +41,7 @@ public class UserCollectionTest {
     @Test
 // TODO:TestAddAccounts to UserCollection.
     public void TestAddMultipleUsers() {
-        assertEquals(au1.getAllUsers().size(), 0);
+        assertEquals(au1.numAccounts(), 0);
         //add accounts to UserCollection
         au1.addUser(a1);
         au1.addUser(a2);

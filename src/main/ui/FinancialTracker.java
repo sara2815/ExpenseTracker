@@ -105,24 +105,30 @@ public class FinancialTracker {
                     + "\n To return to the Main Menu -->  D.");
             String whichHistory = input.next();
             input.nextLine();
-            if (whichHistory.equals("A")) {
-                viewTransactions(acc.getTransactionHistory());
-            } else if (whichHistory.equals("B")) {
-                if (acc.getExpensesHistory().isEmpty()) {
-                    System.out.println("You have no past expenses.");
-                } else {
-                    viewTransactions(acc.getExpensesHistory());
-                }
-            } else if (whichHistory.equals("C")) {
-                if (acc.getEarningsHistory().isEmpty()) {
-                    System.out.println("You have no past earnings.");
-                } else {
-                    viewTransactions(acc.getEarningsHistory());
-                }
-            } else if (whichHistory.equals("D")) {
-                displaySecondMenu();
-            } else {
-                System.out.println("Selection does not match with options. Please try again!");
+            switch (whichHistory) {
+                case "A":
+                    viewTransactions(acc.getTransactionHistory());
+                    break;
+                case "B":
+                    if (acc.getExpensesHistory().isEmpty()) {
+                        System.out.println("You have no past expenses.");
+                    } else {
+                        viewTransactions(acc.getExpensesHistory());
+                    }
+                    break;
+                case "C":
+                    if (acc.getEarningsHistory().isEmpty()) {
+                        System.out.println("You have no past earnings.");
+                    } else {
+                        viewTransactions(acc.getEarningsHistory());
+                    }
+                    break;
+                case "D":
+                    displaySecondMenu();
+                    break;
+                default:
+                    System.out.println("Selection does not match with options. Please try again!");
+                    break;
             }
         }
     }
