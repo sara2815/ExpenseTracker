@@ -49,13 +49,12 @@ public class UserCollectionTest {
         //check if it has been added correctly
         assertEquals(au1.getAllUsers().size(), 3);
         assertEquals(au1.getAllUsers().get(0), a1);
-
     }
 
     @Test
 // TODO:TestRemoveUser from UserCollection
     public void TestRemoveUser() {
-        assertEquals(au1.getAllUsers().size(), 0);
+        assertEquals(au1.numAccounts(), 0);
         //add accounts to UserCollection
         au1.addUser(a1);
         au1.addUser(a2);
