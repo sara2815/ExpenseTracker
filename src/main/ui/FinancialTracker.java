@@ -93,6 +93,7 @@ public class FinancialTracker {
 
     //EFFECTS: produces the past transaction history of the user. User can choose to view specifically
     // the earning or expense history as well if the transaction history is not empty.
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private void doHistory() {
         if (acc.getTransactionHistory().isEmpty()) {
             System.out.println("You have no past transactions.");
