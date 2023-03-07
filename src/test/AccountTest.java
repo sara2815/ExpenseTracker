@@ -19,6 +19,7 @@ public class AccountTest {
     Transaction t2;
     Transaction t3;
     Transaction t4;
+    Transaction t5;
 
 
     @BeforeEach
@@ -31,6 +32,7 @@ public class AccountTest {
                 Category.EXPENSE);
         t4 = new Transaction("biryani", 4, 400, "bought takeout",
                 Category.EXPENSE);
+        t5 = new Transaction("cries", 10, 80, "school is hard", Category.EARNING);
     }
 
     @Test
@@ -175,20 +177,38 @@ public class AccountTest {
                 "\"title\":\"tuition\"}", a2.getTransactionHistory().get(0).toJson().toString());
 
     }
+
     @Test
     // TODO:TestEarningsToJson
-    public void TestEarningsToJson() {
+    public void TestOneEarningToJson() {
         a2.addTransaction(t2);
         assertEquals("{\"date\":2,\"transactionType\":\"EARNING\",\"amount\":800,\"description\":\"Expensive\"," +
                 "\"title\":\"job\"}", a2.getEarningsHistory().get(0).toJson().toString());
 
     }
 
+
     @Test
-    // TODO:TestExpensesToJson
-    public void TestExpensesToJson() {
-        a2.addTransaction(t4);
-        assertEquals("{\"date\":4,\"transactionType\":\"EXPENSE\",\"amount\":400,\"description\":" +
-                "\"bought takeout\"," + "\"title\":\"biryani\"}", a2.getExpensesHistory().get(0).toJson().toString());
+    // TODO:TestMultipleEarningsToJson
+    public void TestMultipleEarningsToJson() {
+        a2.addTransaction(t2);
+        a2.addTransaction(t5);
+        assertEquals("{\"totalEarnings\":880,\"balance\":880,\"earningsHistory" +
+                        "\":[{\"date\":10,\"transactionType\":\"EARNING\",\"amount\":80,\"description\":" +
+                "\"school is hard\",\"title\":\"cries\"},{\"date\":2,\"transactionType\":\"EARNING\",\"amount\":800," +
+                "\"description\":" +
+                        "\"Expensive\",\"title\":\"job\"}],\"transactionHistory\":[{\"date\":10," +
+                "\"transactionType\":\"EARNING\","
+                        + "\"amount\":80,\"description\":\"school is hard\",\"title\":\"cries\"},{\"date\":2," +
+                "\"transactionType\":\"EARNING\",\"amount\":800,\"description\":\"Expensive\",\"title\":\"job\"}]," +
+                        "\"expensesHistory\":[],\"userName\":\"Adyesha\",\"totalExpense\":0}", a2.toJson().toString());
     }
-}
+
+@Test
+// TODO:TestExpensesToJson
+public void TestOneExpenseToJson(){
+        a2.addTransaction(t4);
+        assertEquals("{\"date\":4,\"transactionType\":\"EXPENSE\",\"amount\":400,\"description\":"+
+        "\"bought takeout\","+"\"title\":\"biryani\"}",a2.getExpensesHistory().get(0).toJson().toString());
+        }
+        }
