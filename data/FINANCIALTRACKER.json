@@ -1,9 +1,65 @@
-{"allUsers": [{
-    "totalEarnings": 0,
-    "balance": 0,
-    "earningsHistory": [],
-    "transactionHistory": [],
-    "expensesHistory": [],
-    "userName": "name",
-    "totalExpense": 0
-}]}
+{"allUsers": [
+    {
+        "totalEarnings": 600,
+        "balance": 600,
+        "earningsHistory": [{
+            "date": 1,
+            "transactionType": "EARNING",
+            "amount": 200,
+            "description": "untitled",
+            "title": "books"
+        }],
+        "transactionHistory": [{
+            "date": 1,
+            "transactionType": "EARNING",
+            "amount": 200,
+            "description": "untitled",
+            "title": "books"
+        }],
+        "expensesHistory": [],
+        "userName": "jessie",
+        "totalExpense": 0
+    },
+    {
+        "totalEarnings": 400,
+        "balance": 400,
+        "earningsHistory": [{
+            "date": 1,
+            "transactionType": "EARNING",
+            "amount": 200,
+            "description": "untitled",
+            "title": "food"
+        }],
+        "transactionHistory": [{
+            "date": 1,
+            "transactionType": "EARNING",
+            "amount": 200,
+            "description": "untitled",
+            "title": "food"
+        }],
+        "expensesHistory": [],
+        "userName": "adyesha",
+        "totalExpense": 0
+    },
+    {
+        "totalEarnings": 0,
+        "balance": -200,
+        "earningsHistory": [],
+        "transactionHistory": [{
+            "date": 3,
+            "transactionType": "EXPENSE",
+            "amount": 200,
+            "description": "untitled",
+            "title": "laptop"
+        }],
+        "expensesHistory": [{
+            "date": 3,
+            "transactionType": "EXPENSE",
+            "amount": 200,
+            "description": "untitled",
+            "title": "laptop"
+        }],
+        "userName": "adyesha",
+        "totalExpense": 200
+    }
+]}

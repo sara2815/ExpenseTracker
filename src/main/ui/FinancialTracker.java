@@ -38,11 +38,17 @@ public class FinancialTracker {
     // EFFECTS: Processes user input
     private void runFinancialTracker() {
         boolean keepGoing = true;
+        String load = null;
         String command = null;
         String newCommand = null;
         displayMenu();
-        nameCommand = input.next();
-        processNameCommand(nameCommand);
+        load = input.next();
+        load = load.toLowerCase();
+        processLoadCommand(load);
+        displayName();
+        command = input.next();
+        command = command.toLowerCase();
+        processNameCommand(command);
 
 
         while (keepGoing) {
@@ -84,8 +90,19 @@ public class FinancialTracker {
             doHistory();
         } else if (newCommand.equals("save")) {
             saveAllUser();
-        } else if (newCommand.equals("load")) {
+        } else {
+            System.out.println("User typo made or keyword doesn't match. Please try again!");
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: processes user commands on displaySecondMenu
+    private void processLoadCommand(String load) {
+        if (load.equals("load")) {
             loadAllUser();
+            ;
+        } else if (load.equals("c")) {
+            displaySecondMenu();
         } else {
             System.out.println("User typo made or keyword doesn't match. Please try again!");
         }
@@ -153,9 +170,19 @@ public class FinancialTracker {
     private void displayMenu() {
         input = new Scanner(System.in);
         input.useDelimiter("\n");
-        System.out.println("\nHi! Welcome to our Financial Tracker!");
-        System.out.println("\nPlease enter your name to view your Financial Tracker.");
+        System.out.println("\tHi! Welcome to our Financial Tracker!");
+        System.out.println("\nTo load your previous changes back --> load"
+                + "\nTo continue to your Financial Tracker --> c");
     }
+
+    // EFFECTS: displays the menu to user prompting them to enter their name.
+    private void displayName() {
+        input = new Scanner(System.in);
+        input.useDelimiter("\n");
+        System.out.println("\nHi! Please enter your name."
+                + "\n If you have visited the Financial Tracker before enter that name.");
+    }
+
 
     // EFFECTS: displays the menu to user prompting them to choose which course of action to undertake
     //such as making a transaction, checking balance, viewing history or quiting.
@@ -165,7 +192,6 @@ public class FinancialTracker {
         System.out.println("\tbalance -> To view your current balance");
         System.out.println("\thistory -> To view your past transaction history");
         System.out.println("\tsave -> To save your recent changes");
-        System.out.println("\tload -> To load your previous changes back.");
         System.out.println("\tquit -> To exit the Financial Tracker application.");
     }
 
@@ -177,7 +203,7 @@ public class FinancialTracker {
         String title = insertWords();
         int month = 0;
         String desc = "";
-        System.out.print("Enter amount to deposit: $");
+        System.out.print("Enter amount: $");
         double amount = input.nextDouble();
         Category category = selectCategory();
         System.out.println("\nPlease enter the month the transaction was made in as a number."
