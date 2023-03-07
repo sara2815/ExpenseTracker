@@ -3,6 +3,7 @@ import model.Transaction;
 
 import model.Category;
 import model.UserCollection;
+import org.json.JSONArray;
 import org.junit.jupiter.api.BeforeEach;
 
 import org.junit.jupiter.api.Test;
@@ -71,5 +72,20 @@ public class UserCollectionTest {
         au1.removeUser(a2);
         assertEquals(au1.getAllUsers().size(), 1);
 
+    }
+    @Test
+    // TODO:TestUserToJson
+    public void TestUserToJson() {
+        assertEquals("{\"allUsers\":[]}", au1.toJson().toString());
+
+    }
+
+@Test
+    //TODO:TestAccountsToJson()
+    // EFFECTS: returns accounts in this allUser as a JSON array
+    public void TestAccountsToJson() {
+        au1.addUser(a1);
+        assertEquals("{\"allUsers\":[{\"totalEarnings\":0,\"balance\":0,\"earningsHistory\":[]," +
+                "\"transactionHistory\":[],\"expensesHistory\":[],\"userName\":\"Aarushi\",\"totalExpense\":0}]}", au1.toJson().toString());
     }
 }
