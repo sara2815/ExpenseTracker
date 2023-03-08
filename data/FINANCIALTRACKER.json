@@ -1,7 +1,7 @@
 {"allUsers": [
     {
-        "totalEarnings": 600,
-        "balance": 600,
+        "totalEarnings": 800,
+        "balance": 800,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -21,8 +21,8 @@
         "totalExpense": 0
     },
     {
-        "totalEarnings": 400,
-        "balance": 400,
+        "totalEarnings": 600,
+        "balance": 600,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -42,16 +42,31 @@
         "totalExpense": 0
     },
     {
-        "totalEarnings": 0,
-        "balance": -200,
-        "earningsHistory": [],
-        "transactionHistory": [{
-            "date": 3,
-            "transactionType": "EXPENSE",
-            "amount": 200,
+        "totalEarnings": 4000,
+        "balance": 3600,
+        "earningsHistory": [{
+            "date": 1,
+            "transactionType": "EARNING",
+            "amount": 4000,
             "description": "untitled",
-            "title": "laptop"
+            "title": "clothes"
         }],
+        "transactionHistory": [
+            {
+                "date": 1,
+                "transactionType": "EARNING",
+                "amount": 4000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            }
+        ],
         "expensesHistory": [{
             "date": 3,
             "transactionType": "EXPENSE",
@@ -60,6 +75,42 @@
             "title": "laptop"
         }],
         "userName": "adyesha",
-        "totalExpense": 200
+        "totalExpense": 400
+    },
+    {
+        "totalEarnings": 4000,
+        "balance": 3600,
+        "earningsHistory": [{
+            "date": 1,
+            "transactionType": "EARNING",
+            "amount": 4000,
+            "description": "untitled",
+            "title": "clothes"
+        }],
+        "transactionHistory": [
+            {
+                "date": 1,
+                "transactionType": "EARNING",
+                "amount": 4000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            }
+        ],
+        "expensesHistory": [{
+            "date": 3,
+            "transactionType": "EXPENSE",
+            "amount": 200,
+            "description": "untitled",
+            "title": "laptop"
+        }],
+        "userName": "adyesha",
+        "totalExpense": 400
     }
 ]}

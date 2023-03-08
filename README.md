@@ -29,12 +29,15 @@ beneficial to me and to other students.
 - *As a user, I want my transactions and history to be saved when I leave, if I choose to.*
 - *As a user, I want to be able to given the option to load my past transactions from file.*
 ###User Stories Achieved in Phase 1
-- *Users are now able to create transactions.*
 - *Users are able to add these transactions to their accounts*
 - *Users are able to view their balance*
 - *Users are able to view only their expenditure history*
 - *Users are able to view only their earning history*
 - *Users are able to quit the Financial Tracker and leave*
+###User Stories Achieved in Phase 2
 
+- *As a user, I want my transactions and history to be saved when I leave, if I choose to.*
+- *As a user, I want to be able to given the option to load my past transactions from file.*
 ###Resources Used
 Teller App was used as a reference point to build UI. 
+Serialization Demo App was used as reference to build data persistence

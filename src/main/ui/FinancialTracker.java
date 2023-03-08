@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class FinancialTracker {
     private static final String JSON_STORE = "./data/FINANCIALTRACKER.json";
     private Scanner input;
-    private UserCollection alluser;
+    private UserCollection allUser;
     private Account acc;
     private String nameCommand;
     private JsonWriter jsonWriter;
@@ -27,7 +27,7 @@ public class FinancialTracker {
     //EFFECTS: run the financial tracker application
     public FinancialTracker() throws FileNotFoundException {
         input = new Scanner(System.in);
-        alluser = new UserCollection();
+        allUser = new UserCollection();
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         runFinancialTracker();
@@ -70,12 +70,12 @@ public class FinancialTracker {
     //EFFECTS: processes name input to make new account and initializes balance as 0.
     private void processNameCommand(String command) {
         acc = new Account(command, 0);
-        for (Account account : alluser.getAllUsers()) {
-            if (account.getName() == command) {
+        for (Account account : allUser.getAllUsers()) {
+            if (account.getName().equals(command)) {
                 acc = account;
             }
         }
-        alluser.addUser(acc);
+        allUser.addUser(acc);
     }
 
 
@@ -261,7 +261,7 @@ public class FinancialTracker {
     private void saveAllUser() {
         try {
             jsonWriter.open();
-            jsonWriter.write(alluser);
+            jsonWriter.write(allUser);
             jsonWriter.close();
             System.out.println("Saved " + " to " + JSON_STORE);
         } catch (FileNotFoundException e) {
@@ -273,7 +273,7 @@ public class FinancialTracker {
     // EFFECTS: loads allUser from file
     private void loadAllUser() {
         try {
-            alluser = jsonReader.read();
+            allUser = jsonReader.read();
             System.out.println("Loaded " + " from " + JSON_STORE);
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);

@@ -7,7 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
 
-// Represents all users that have used the financial tracker.
+// Represents a collection of all the users that have used the financial tracker.
 public class UserCollection implements Writable {
     //fields
     private LinkedList<Account> allUsers;
@@ -16,6 +16,7 @@ public class UserCollection implements Writable {
     //constructor
 //EFFECTS: Constructs a new list of all users.
     public UserCollection() {
+
         allUsers = new LinkedList<Account>();
     }
 
