@@ -100,7 +100,6 @@ public class FinancialTracker {
     private void processLoadCommand(String load) {
         if (load.equals("load")) {
             loadAllUser();
-            ;
         } else if (load.equals("c")) {
             displaySecondMenu();
         } else {

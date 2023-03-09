@@ -1,13 +1,13 @@
 package persistence;
 
 import model.UserCollection;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 
 import java.io.*;
 
 // Represents a writer that writes JSON representation of account to file
+// Uses SerializationDemoApp as a foundation for code.
 public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;

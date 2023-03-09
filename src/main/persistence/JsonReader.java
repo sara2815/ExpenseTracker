@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 import org.json.*;
 
 // Represents a reader that reads account from JSON data stored in file
+//Uses code from SerializationDemoApp as a base.
 public class JsonReader {
     private String source;
 

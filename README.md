@@ -19,8 +19,7 @@ An application that would summarize all my financial information, savings and ke
 beneficial to me and to other students. 
 
 ### User Stories
-- *As a user, I want to be able to create a transaction.*
-- *As a user, I want to be able to add a transaction (gain or expenditure) to my tracker.*
+- *As a user, I want to be able to create and add a transaction (gain or expenditure) to my tracker.*
 - *As a user, I want to be able to view my past transactions.*
 - *As a user, I want to be shown my current balance.*
 - *As a user, I want to be able to view only my expenditure history.*
@@ -34,10 +33,11 @@ beneficial to me and to other students.
 - *Users are able to view only their expenditure history*
 - *Users are able to view only their earning history*
 - *Users are able to quit the Financial Tracker and leave*
+- 
 ###User Stories Achieved in Phase 2
-
 - *As a user, I want my transactions and history to be saved when I leave, if I choose to.*
 - *As a user, I want to be able to given the option to load my past transactions from file.*
 ###Resources Used
-Teller App was used as a reference point to build UI. 
+Teller App was used as a reference point to build UI.
+
 Serialization Demo App was used as reference to build data persistence

@@ -2,7 +2,6 @@ package model;
 
 import java.util.LinkedList;
 
-import model.Account;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import persistence.Writable;
@@ -17,7 +16,7 @@ public class UserCollection implements Writable {
 //EFFECTS: Constructs a new list of all users.
     public UserCollection() {
 
-        allUsers = new LinkedList<Account>();
+        allUsers = new LinkedList<>();
     }
 
     //MODIFIES: this
