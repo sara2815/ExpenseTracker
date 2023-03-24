@@ -81,8 +81,31 @@ public class FinanceGUI extends JFrame {
 
     private JPanel addButtonPanel() {
         JPanel buttonPanel = new JPanel();
+        buttonPanel.add(transactionButton());
+        buttonPanel.add(historyButton());
+
+
+        return buttonPanel;
+    }
+//EFFECTS: Creates a button that when clicked allows user to see all the past transactions they have made.
+    private JButton historyButton() {
+        //
+        JButton history = new JButton("View Past Transactions");
+        history.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                HistoryGraphics historyGraphics = new HistoryGraphics();
+                historyGraphics.viewPastTransactions(acc);
+            }
+        });
+
+        return history;
+    }
+
+    //EFFECTS: creates a transaction button that allows the user to make a new transaction to add to their account.
+    //MODIFIES: this, and the user's account.
+    private JButton transactionButton() {
         JButton transaction = new JButton("New Transaction");
-        buttonPanel.add(transaction);
         transaction.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -94,8 +117,7 @@ public class FinanceGUI extends JFrame {
             }
         }
         );
-
-        return buttonPanel;
+        return transaction;
     }
 
     private void centreOnScreen() {
