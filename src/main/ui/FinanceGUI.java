@@ -26,8 +26,8 @@ public class FinanceGUI extends JFrame {
     private String name;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
-    private static final int WIDTH = 800;
-    private static final int HEIGHT = 600;
+    private static final int WIDTH = 1000;
+    private static final int HEIGHT = 800;
     private JDesktopPane desktop;
     private UserCollection user;
     private JInternalFrame controlPanel;
@@ -60,6 +60,7 @@ public class FinanceGUI extends JFrame {
         if (load.equals("yes")) {
             loadAllUser();
         }
+        setUpAccount();
         displaySecondMenu();
     }
 
@@ -85,8 +86,11 @@ public class FinanceGUI extends JFrame {
         transaction.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String textFieldValue = transaction.getText();
-                System.out.println("Sometihng is working");
+                TransactionGraphics newTransaction = new TransactionGraphics();
+                newTransaction.makeTransactionPanel(acc);
+                newTransaction.setVisible(true);
+                newTransaction.setSize(500, 250);
+                desktop.add(newTransaction);
             }
         }
         );
@@ -112,7 +116,6 @@ public class FinanceGUI extends JFrame {
         try {
             allUser = jsonReader.read();
             System.out.println("Loaded " + " from " + JSON_STORE);
-            setUpAccount();
         } catch (IOException e) {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }
