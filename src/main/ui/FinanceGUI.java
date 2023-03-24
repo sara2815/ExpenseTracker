@@ -87,7 +87,8 @@ public class FinanceGUI extends JFrame {
 
         return buttonPanel;
     }
-//EFFECTS: Creates a button that when clicked allows user to see all the past transactions they have made.
+
+    //EFFECTS: Creates a button that when clicked allows user to see all the past transactions they have made.
     private JButton historyButton() {
         //
         JButton history = new JButton("View Past Transactions");
@@ -95,7 +96,10 @@ public class FinanceGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 HistoryGraphics historyGraphics = new HistoryGraphics();
-                historyGraphics.viewPastTransactions(acc);
+                historyGraphics.makeHistoryPanel(acc);
+                historyGraphics.setVisible(true);
+                historyGraphics.setSize(500, 250);
+                desktop.add(historyGraphics);
             }
         });
 
