@@ -27,6 +27,7 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
     JRadioButton r2 = new JRadioButton("Earning");
     Account currentAccount = new Account("dummy", 0);
     JButton doit = new JButton("Create!");
+    JButton close = new JButton("Close");
 
     // New: the five panels
 
@@ -63,6 +64,7 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private void setUpAppearance() {
         setLayout(new FlowLayout());   // set layout manager for the JFrame
+        close.setBackground(Color.red);
         makeTitle.setEditable(true);
         makeAmount.setEditable(true);
         makeDate.setEditable(true);
@@ -78,6 +80,7 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
         descriptionPanel.add(descriptionLabel);
         descriptionPanel.add(makeDescription);
         createPanel.add(doit);
+        createPanel.add(close);
         hedPanel.setVisible(true);
         titlePanel.setVisible(true);
         amountPanel.setVisible(true);
@@ -89,6 +92,12 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
             @Override
             public void actionPerformed(ActionEvent e) {
                 createTransaction();
+            }
+        });
+        close.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
             }
         });
     }
@@ -111,7 +120,7 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
         this.add(descriptionPanel);
         this.add(transactionTypePanel);
         this.add(createPanel);
-        this.setLocation(400,  300);
+        this.setLocation(400, 300);
         this.pack();
     }
 
