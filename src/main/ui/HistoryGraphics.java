@@ -1,6 +1,7 @@
 package ui;
 
 import model.Account;
+import model.Category;
 import model.Transaction;
 
 import javax.swing.*;
@@ -14,7 +15,6 @@ import java.util.LinkedList;
 
 
 public class HistoryGraphics extends JInternalFrame implements ActionListener {
-    JLabel heading = new JLabel("Past Transactions");
     JList history = new JList();
     JPanel viewHistoryPanel = new JPanel();
     Account currentAcc = new Account("dummy", 0);
@@ -32,11 +32,9 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
 
     private void setUpVisuals() {
         setLayout(new FlowLayout());   // set layout manager for the JFrame
-        hedPanel.add(heading);
         viewHistoryPanel.add(history);
         hedPanel.setVisible(true);
         viewHistoryPanel.setVisible(true);
-        this.add(hedPanel);
         this.add(viewHistoryPanel);
         this.setLocation(400, 100);
         this.pack();
@@ -46,7 +44,15 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
     public JList viewPastTransactions() {
         ArrayList<String> oldTransactionNames = new ArrayList<String>();
         for (Transaction t : currentAcc.getTransactionHistory()) {
-            oldTransactionNames.add(t.getTitle());
+            String operator = "-";
+            if (t.getTransactionType() == Category.EARNING) {
+                operator = "";
+            }
+            oldTransactionNames.add(" Name:          "
+                    + t.getTitle()
+                    + "\t          Amount : $"
+                    + operator + t.getAmount()
+                    + "\t          Date: " + t.getDate());
         }
         String[] oldTransactions = new String[oldTransactionNames.size()];
         oldTransactionNames.toArray(oldTransactions);

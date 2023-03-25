@@ -7,14 +7,19 @@ import model.UserCollection;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 import java.beans.PropertyChangeListener;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Scanner;
 
 //Runs GUI
@@ -26,21 +31,20 @@ public class FinanceGUI extends JFrame {
     private String name;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
-    private static final int WIDTH = 1000;
-    private static final int HEIGHT = 800;
+    private static final int WIDTH = 900;
+    private static final int HEIGHT = 600;
     private JDesktopPane desktop;
-    private UserCollection user;
     private JInternalFrame controlPanel;
 
 
     public FinanceGUI() {
         desktop = new JDesktopPane();
+        desktop.setBackground(Color.decode("#2B6D72"));
         allUser = new UserCollection();
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         controlPanel = new JInternalFrame("Control Panel", false, false, false, false);
         controlPanel.setLayout(new BorderLayout());
-
         controlPanel.setSize(300, 300);
 
         setContentPane(desktop);
@@ -65,10 +69,11 @@ public class FinanceGUI extends JFrame {
     }
 
     private void displaySecondMenu() {
+        showfirstPage();
         addButtonPanel();
         addMenu();
         addTransactionDisplayPanel();
-
+        controlPanel.setBackground(Color.WHITE);
         controlPanel.setVisible(true);
         desktop.add(controlPanel);
 
@@ -79,13 +84,52 @@ public class FinanceGUI extends JFrame {
 
     }
 
+    private void showfirstPage() {
+        BufferedImage image = null;
+        try {
+            image = ImageIO.read(new File("Image/FINANCIAL_TRACKER.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ImageDisplay frame = new ImageDisplay(image);
+        frame.showImage(3);
+    }
+
     private JPanel addButtonPanel() {
         JPanel buttonPanel = new JPanel();
+        transactionButton().setBackground(Color.WHITE);
+        historyButton().setBackground(Color.WHITE);
         buttonPanel.add(transactionButton());
         buttonPanel.add(historyButton());
+        buttonPanel.add(saveButton());
 
 
         return buttonPanel;
+    }
+
+    //EFFECTS: Creates a button that when clicked allows user to see all the past transactions they have made.
+    private JButton saveButton() {
+        //
+        JButton save = new JButton("Save");
+        save.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                save();
+            }
+
+        });
+        return save;
+    }
+
+    private void save() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(allUser);
+            jsonWriter.close();
+            System.out.println("Saved " + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
     }
 
     //EFFECTS: Creates a button that when clicked allows user to see all the past transactions they have made.
@@ -125,9 +169,6 @@ public class FinanceGUI extends JFrame {
     }
 
     private void centreOnScreen() {
-    }
-
-    private void addKeyPad() {
     }
 
     private void addMenu() {
