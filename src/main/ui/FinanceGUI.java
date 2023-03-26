@@ -35,6 +35,9 @@ public class FinanceGUI extends JFrame {
     private static final int HEIGHT = 600;
     private JDesktopPane desktop;
     private JInternalFrame controlPanel;
+    private JPanel headers;
+    private JLabel accountName;
+    private JLabel balance;
 
 
     public FinanceGUI() {
@@ -43,9 +46,10 @@ public class FinanceGUI extends JFrame {
         allUser = new UserCollection();
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
-        controlPanel = new JInternalFrame("Control Panel", false, false, false, false);
+        controlPanel = new JInternalFrame("Financial Tracker", false, false, false, false);
         controlPanel.setLayout(new BorderLayout());
-        controlPanel.setSize(300, 300);
+        controlPanel.setSize(300, 600);
+
 
         setContentPane(desktop);
         setTitle("Financial Tracker");
@@ -71,15 +75,12 @@ public class FinanceGUI extends JFrame {
     private void displaySecondMenu() {
         showfirstPage();
         addButtonPanel();
-        addMenu();
-        addTransactionDisplayPanel();
         controlPanel.setBackground(Color.WHITE);
         controlPanel.setVisible(true);
         desktop.add(controlPanel);
-
+        controlPanel.setLayout(new GridLayout(1, 5));
         controlPanel.add(addButtonPanel());
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        centreOnScreen();
         setVisible(true);
 
     }
@@ -97,13 +98,18 @@ public class FinanceGUI extends JFrame {
 
     private JPanel addButtonPanel() {
         JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(5,1));
+        headers = new JPanel();
+        headers.add(accountName);
+        headers.add(balance);
+        accountName.setVisible(true);
+        buttonPanel.add(headers);
         transactionButton().setBackground(Color.WHITE);
         historyButton().setBackground(Color.WHITE);
         buttonPanel.add(transactionButton());
         buttonPanel.add(historyButton());
         buttonPanel.add(saveButton());
-
-
+        buttonPanel.add(earningHistoryButton());
         return buttonPanel;
     }
 
@@ -111,6 +117,11 @@ public class FinanceGUI extends JFrame {
     private JButton saveButton() {
         //
         JButton save = new JButton("Save");
+        Font font = new Font("Arial", Font.BOLD, 22);
+        save.setFont(font);
+        save.setBackground(Color.WHITE);
+        save.setForeground(Color.decode("#2B6D72"));
+        save.setBorder(new LineBorder(Color.decode("#818A8B"), 2));
         save.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -135,12 +146,18 @@ public class FinanceGUI extends JFrame {
     //EFFECTS: Creates a button that when clicked allows user to see all the past transactions they have made.
     private JButton historyButton() {
         //
-        JButton history = new JButton("View Past Transactions");
+        JButton history = new JButton("View History");
+        Font font = new Font("Arial", Font.BOLD, 22);
+        history.setFont(font);
+        history.setBackground(Color.WHITE);
+        history.setForeground(Color.decode("#2B6D72"));
+        history.setBorder(new LineBorder(Color.decode("#818A8B"), 2));
         history.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 HistoryGraphics historyGraphics = new HistoryGraphics();
-                historyGraphics.makeHistoryPanel(acc);
+                historyGraphics.makeHistoryPanel(acc, "All Past Transactions");
                 historyGraphics.setVisible(true);
                 historyGraphics.setSize(500, 250);
                 desktop.add(historyGraphics);
@@ -150,10 +167,41 @@ public class FinanceGUI extends JFrame {
         return history;
     }
 
+
+    //EFFECTS: Creates a button that when clicked allows user to see all the past transactions they have made.
+    private JButton earningHistoryButton() {
+        //
+        JButton history = new JButton("View Earning History");
+        Font font = new Font("Arial", Font.BOLD, 22);
+        history.setFont(font);
+        history.setBackground(Color.WHITE);
+        history.setForeground(Color.decode("#2B6D72"));
+        history.setBorder(new LineBorder(Color.decode("#818A8B"), 2));
+        history.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                HistoryGraphics historyGraphics = new HistoryGraphics();
+                historyGraphics.makeHistoryPanel(acc, "Past Earnings");
+                historyGraphics.setVisible(true);
+                historyGraphics.setSize(500, 250);
+                desktop.add(historyGraphics);
+            }
+        });
+
+        return history;
+    }
+
+
     //EFFECTS: creates a transaction button that allows the user to make a new transaction to add to their account.
     //MODIFIES: this, and the user's account.
     private JButton transactionButton() {
-        JButton transaction = new JButton("New Transaction");
+        JButton transaction = new JButton("Make Transaction");
+        Font font = new Font("Arial", Font.BOLD, 22);
+        transaction.setFont(font);
+        transaction.setBackground(Color.WHITE);
+        transaction.setForeground(Color.decode("#2B6D72"));
+        transaction.setBorder(new LineBorder(Color.decode("#818A8B"), 2));
         transaction.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -166,15 +214,6 @@ public class FinanceGUI extends JFrame {
         }
         );
         return transaction;
-    }
-
-    private void centreOnScreen() {
-    }
-
-    private void addMenu() {
-    }
-
-    private void addTransactionDisplayPanel() {
     }
 
     // MODIFIES: this
@@ -204,12 +243,16 @@ public class FinanceGUI extends JFrame {
         }
         allUser.addUser(acc);
         name = acc.getName();
+        Font font = new Font("Arial", Font.BOLD, 15);
+        accountName = new JLabel("Username : " + "   " + acc.getName());
+        accountName.setFont(font);
+        accountName.setBackground(Color.WHITE);
+        accountName.setForeground(Color.decode("#364849"));
+        balance = new JLabel("Current Balance:  $" + acc.getBalance());
+        balance.setFont(font);
+        balance.setBackground(Color.WHITE);
+        balance.setForeground(Color.decode("#364849"));
     }
-
-    /**
-     * Represents action to be taken when user wants to add a new code
-     * to the system.
-     */
 
 
     private class RemoveTransactionAction implements Icon, Action {

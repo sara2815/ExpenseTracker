@@ -104,6 +104,9 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
 
     //EFFECTS: makes the transaction panel with editable fields for the user.
     private void makeTransactionType(JLabel transactionTypeLabel, JRadioButton r1, JRadioButton r2) {
+        ButtonGroup group = new ButtonGroup();
+        group.add(r1);
+        group.add(r2);
         transactionTypePanel.add(transactionTypeLabel);
         transactionTypePanel.add(r1);
         transactionTypePanel.add(r2);
