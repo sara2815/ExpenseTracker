@@ -90,14 +90,11 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
         history.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         history.setLayoutOrientation(JList.HORIZONTAL_WRAP);
         history.setVisibleRowCount(-1);
-        history.setBackground(Color.decode("#C29540"));
-        Font font = new Font("Verdana", Font.BOLD, 12);
+        Font font = new Font("Verdana", Font.BOLD, 13);
         history.setFont(font);
         history.setForeground(Color.WHITE);
         history.setBackground(Color.decode("#C29540"));
-        history.setBorder(new LineBorder(Color.decode("#C29540"), 10));
         viewHistoryPanel.setBackground(Color.decode("#C29540"));
-        viewHistoryPanel.setBorder(new LineBorder(Color.decode("#C29540"), 10));
         JScrollPane listScroller = new JScrollPane(history);
         viewHistoryPanel.add(listScroller);
         return history;
