@@ -28,6 +28,7 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
     Account currentAccount = new Account("dummy", 0);
     JButton doit = new JButton("Create!");
     JButton close = new JButton("Close");
+    JLabel balanceTextField;
 
     // New: the five panels
 
@@ -37,15 +38,22 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
     JPanel datePanel = new JPanel();
     JPanel descriptionPanel = new JPanel();
 
-    public void makeTransactionPanel(Account acc) {
-        this.currentAccount = acc;
-        //makes transaction Panel
-        setTitle("Create a new transaction");
-        setUpAppearance();
-        //adds new transaction to the account
+    //EFFECTS: constructor
+    public  TransactionGraphics(JLabel balance) {
+        super();
+        balanceTextField = balance;
 
     }
 
+    //EFFECTS: Creates the transaction panel and sets up appearance and visuals.
+    public void makeTransactionPanel(Account acc) {
+        this.currentAccount = acc;
+        setTitle("Create a new transaction");
+        setUpAppearance();
+    }
+
+    //EFFECTS: Creates new transaction.
+    //MODIFIES: this as well as the user's account.
     private void createTransaction() {
         System.out.println("IT WORKS");
         String title = makeTitle.getText();
@@ -58,14 +66,15 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
         }
         Transaction t = new Transaction(title, date, amount, description, newTransactionType);
         currentAccount.addTransaction(t);
+        balanceTextField.setText("Current Balance: $" + currentAccount.getBalance());
 
     }
 
-    //EFFECTS: sets up the visuals.
+    //EFFECTS: sets up the visual appearance of the various components on the panel.
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private void setUpAppearance() {
         setLayout(new FlowLayout());   // set layout manager for the JFrame
-        close.setBackground(Color.red);
+        close.setBackground(Color.white);
         makeTitle.setEditable(true);
         makeAmount.setEditable(true);
         makeDate.setEditable(true);
@@ -130,6 +139,6 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        // must override but doesn't do anything
     }
 }

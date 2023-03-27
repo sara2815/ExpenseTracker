@@ -1,7 +1,7 @@
 {"allUsers": [
     {
-        "totalEarnings": 2000,
-        "balance": 2000,
+        "totalEarnings": 2400,
+        "balance": 2400,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -21,8 +21,8 @@
         "totalExpense": 0
     },
     {
-        "totalEarnings": 1800,
-        "balance": 1800,
+        "totalEarnings": 2200,
+        "balance": 2200,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -42,8 +42,8 @@
         "totalExpense": 0
     },
     {
-        "totalEarnings": 28000,
-        "balance": 26400,
+        "totalEarnings": 36000,
+        "balance": 34000,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -75,11 +75,11 @@
             "title": "laptop"
         }],
         "userName": "adyesha",
-        "totalExpense": 1600
+        "totalExpense": 2000
     },
     {
-        "totalEarnings": 28000,
-        "balance": 25200,
+        "totalEarnings": 36000,
+        "balance": 32400,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -127,11 +127,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 2800
+        "totalExpense": 3600
     },
     {
-        "totalEarnings": 28000,
-        "balance": 15200,
+        "totalEarnings": 36000,
+        "balance": 18400,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -193,11 +193,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 12800
+        "totalExpense": 17600
     },
     {
-        "totalEarnings": 28000,
-        "balance": 15170,
+        "totalEarnings": 36000,
+        "balance": 18350,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -273,11 +273,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 12830
+        "totalExpense": 17650
     },
     {
-        "totalEarnings": 400,
-        "balance": 400,
+        "totalEarnings": 600,
+        "balance": 600,
         "earningsHistory": [{
             "date": 5,
             "transactionType": "EARNING",
@@ -297,8 +297,8 @@
         "totalExpense": 0
     },
     {
-        "totalEarnings": 28000,
-        "balance": 15170,
+        "totalEarnings": 36000,
+        "balance": 18350,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -374,11 +374,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 12830
+        "totalExpense": 17650
     },
     {
-        "totalEarnings": 28000,
-        "balance": 15000,
+        "totalEarnings": 36000,
+        "balance": 17840,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -468,11 +468,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 13000
+        "totalExpense": 18160
     },
     {
-        "totalEarnings": 28000,
-        "balance": 15000,
+        "totalEarnings": 36000,
+        "balance": 17000,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -522,6 +522,13 @@
                 "amount": 200,
                 "description": "untitled",
                 "title": "cpsc"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
             }
         ],
         "expensesHistory": [
@@ -559,9 +566,260 @@
                 "amount": 200,
                 "description": "untitled",
                 "title": "cpsc"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 13000
+        "totalExpense": 19000
+    },
+    {
+        "totalEarnings": 36000,
+        "balance": 16900,
+        "earningsHistory": [{
+            "date": 1,
+            "transactionType": "EARNING",
+            "amount": 4000,
+            "description": "untitled",
+            "title": "clothes"
+        }],
+        "transactionHistory": [
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "foaqfjo",
+                "title": "trial"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 170,
+                "description": "bi",
+                "title": "afuh"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 10,
+                "description": "ate chips",
+                "title": "chips"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 2000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 1,
+                "transactionType": "EARNING",
+                "amount": 4000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "cpsc"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
+            }
+        ],
+        "expensesHistory": [
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "foaqfjo",
+                "title": "trial"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 170,
+                "description": "bi",
+                "title": "afuh"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 10,
+                "description": "ate chips",
+                "title": "chips"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 2000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "cpsc"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
+            }
+        ],
+        "userName": "adyesha",
+        "totalExpense": 19100
+    },
+    {
+        "totalEarnings": 36000,
+        "balance": 16900,
+        "earningsHistory": [{
+            "date": 1,
+            "transactionType": "EARNING",
+            "amount": 4000,
+            "description": "untitled",
+            "title": "clothes"
+        }],
+        "transactionHistory": [
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "foaqfjo",
+                "title": "trial"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 170,
+                "description": "bi",
+                "title": "afuh"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 10,
+                "description": "ate chips",
+                "title": "chips"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 2000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 1,
+                "transactionType": "EARNING",
+                "amount": 4000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "cpsc"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
+            }
+        ],
+        "expensesHistory": [
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "foaqfjo",
+                "title": "trial"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 170,
+                "description": "bi",
+                "title": "afuh"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 10,
+                "description": "ate chips",
+                "title": "chips"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 2000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "cpsc"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
+            }
+        ],
+        "userName": "adyesha",
+        "totalExpense": 19100
     }
 ]}

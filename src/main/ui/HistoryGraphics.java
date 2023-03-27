@@ -5,15 +5,12 @@ import model.Category;
 import model.Transaction;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import java.awt.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 
 public class HistoryGraphics extends JInternalFrame implements ActionListener {
@@ -23,12 +20,12 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
     Account currentAcc = new Account("dummy", 0);
     String command;
     JButton close = new JButton("Close");
-
     // New: the five panels
-
     JPanel hedPanel = new JPanel();
 
-    public void makeHistoryPanel(Account acc, String heading) {
+    //EFFECTS: Sets up the Panel
+    //MODIFIES: this
+    public HistoryGraphics(Account acc, String heading) {
         this.currentAcc = acc;
         this.command = heading;
         setTitle(heading);
@@ -36,14 +33,16 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
         //adds new transaction to the account
     }
 
+    //EFFECTS: Sets up the visual appearance of the Panel. Adds all the components
+    //MODIFIES: this
     public void setUpVisuals() {
-        setLayout(new FlowLayout());   // set layout manager for the JFrame
         setBackground(Color.decode("#C29540"));
         setBorder(new LineBorder(Color.decode("#C29540"), 10));
         history.setVisible(true);
+        viewHistoryPanel.setLayout(new BoxLayout(viewHistoryPanel,BoxLayout.PAGE_AXIS));
         viewHistoryPanel.add(history);
         hedPanel.setVisible(true);
-        close.setBackground(Color.red);
+        close.setBackground(Color.white);
         viewHistoryPanel.add(close);
         viewHistoryPanel.setVisible(true);
         this.add(viewHistoryPanel);
@@ -62,8 +61,8 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
         }
     }
 
-
-
+    //EFFECTS: Creates new Scrollable JList that has the past Earning History and puts it on panel.
+    //MODIFIES:this
     public JList viewPastEarnings() {
         ArrayList<String> oldEarningsNames = new ArrayList<String>();
         for (Transaction t : currentAcc.getEarningsHistory()) {
@@ -80,15 +79,17 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
         earningHistory.setLayoutOrientation(JList.HORIZONTAL_WRAP);
         earningHistory.setVisibleRowCount(-1);
         Font font = new Font("Verdana", Font.BOLD, 13);
-        history.setFont(font);
-        history.setForeground(Color.WHITE);
-        history.setBackground(Color.decode("#C29540"));
+        earningHistory.setFont(font);
+        earningHistory.setForeground(Color.WHITE);
+        earningHistory.setBackground(Color.decode("#C29540"));
         viewHistoryPanel.setBackground(Color.decode("#C29540"));
-        JScrollPane earningListScroller = new JScrollPane(history);
+        JScrollPane earningListScroller = new JScrollPane(earningHistory);
         viewHistoryPanel.add(earningListScroller);
         return earningHistory;
     }
 
+    //EFFECTS: Creates a Scrollable JList of all past Transactions and places it on panel
+    //MODIFIES: this
     public JList viewPastTransactions() {
         ArrayList<String> oldTransactionNames = new ArrayList<String>();
         for (Transaction t : currentAcc.getTransactionHistory()) {
@@ -117,7 +118,7 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //
+        // must override but performs no special actions.
 
     }
 }

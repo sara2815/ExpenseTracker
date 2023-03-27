@@ -1,8 +1,6 @@
 package ui;
 
 import model.Account;
-import model.Category;
-import model.Transaction;
 import model.UserCollection;
 import persistence.JsonReader;
 import persistence.JsonWriter;
@@ -13,14 +11,10 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
-import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URL;
-import java.util.Scanner;
 
 //Runs GUI
 
@@ -32,14 +26,14 @@ public class FinanceGUI extends JFrame {
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
     private static final int WIDTH = 900;
-    private static final int HEIGHT = 600;
+    private static final int HEIGHT = 650;
     private JDesktopPane desktop;
     private JInternalFrame controlPanel;
     private JPanel headers;
     private JLabel accountName;
     private JLabel balance;
 
-
+    //constructor sets up the various components of the financialGui
     public FinanceGUI() {
         desktop = new JDesktopPane();
         desktop.setBackground(Color.decode("#2B6D72"));
@@ -49,12 +43,9 @@ public class FinanceGUI extends JFrame {
         controlPanel = new JInternalFrame("Financial Tracker", false, false, false, false);
         controlPanel.setLayout(new BorderLayout());
         controlPanel.setSize(300, 600);
-
-
         setContentPane(desktop);
         setTitle("Financial Tracker");
         setSize(WIDTH, HEIGHT);
-
         String loadAnswer = JOptionPane.showInputDialog(null,
                 "Do you want to load your data? ",
                 "WELCOME TO FINANCIAL TRACKER!",
@@ -63,6 +54,8 @@ public class FinanceGUI extends JFrame {
         handleAnswer(loadAnswer);
     }
 
+    //EFFECTS: Uses the user response to determine whether to load data or not
+    //MODIFIES: the history associated with the current account
     public void handleAnswer(String answer) {
         String load = answer.toLowerCase();
         if (load.equals("yes")) {
@@ -72,6 +65,7 @@ public class FinanceGUI extends JFrame {
         displaySecondMenu();
     }
 
+    //EFFECTS: displays the second control menu that allows use to perform actions on their account.
     private void displaySecondMenu() {
         showfirstPage();
         addButtonPanel();
@@ -85,6 +79,7 @@ public class FinanceGUI extends JFrame {
 
     }
 
+    //EFFECTS: Displays the opening page for the Financial GUI for a few seconds.
     private void showfirstPage() {
         BufferedImage image = null;
         try {
@@ -96,9 +91,11 @@ public class FinanceGUI extends JFrame {
         frame.showImage(3);
     }
 
+    //EFFECTS: Constructs the buttons on the control panel
+    //MODIFIES: the appearance and functionalities of the Control Panel.
     private JPanel addButtonPanel() {
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new GridLayout(5,1));
+        buttonPanel.setLayout(new GridLayout(5, 1));
         headers = new JPanel();
         headers.add(accountName);
         headers.add(balance);
@@ -114,6 +111,7 @@ public class FinanceGUI extends JFrame {
     }
 
     //EFFECTS: Creates a button that when clicked allows user to see all the past transactions they have made.
+    //MODIFIES: the JSON file associated with the Financial GUI.
     private JButton saveButton() {
         //
         JButton save = new JButton("Save");
@@ -132,6 +130,8 @@ public class FinanceGUI extends JFrame {
         return save;
     }
 
+    //EFFECTS: Saves all current account data into the JsonFile.
+    //MODIFIES: The JSON file associated with the FINANCIAL GUI.
     private void save() {
         try {
             jsonWriter.open();
@@ -144,6 +144,7 @@ public class FinanceGUI extends JFrame {
     }
 
     //EFFECTS: Creates a button that when clicked allows user to see all the past transactions they have made.
+    //MODIFIES: The Panels visible on this desktop.
     private JButton historyButton() {
         //
         JButton history = new JButton("View History");
@@ -156,8 +157,7 @@ public class FinanceGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                HistoryGraphics historyGraphics = new HistoryGraphics();
-                historyGraphics.makeHistoryPanel(acc, "All Past Transactions");
+                HistoryGraphics historyGraphics = new HistoryGraphics(acc, "All Past Transactions");
                 historyGraphics.setVisible(true);
                 historyGraphics.setSize(500, 250);
                 desktop.add(historyGraphics);
@@ -181,8 +181,7 @@ public class FinanceGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                HistoryGraphics historyGraphics = new HistoryGraphics();
-                historyGraphics.makeHistoryPanel(acc, "Past Earnings");
+                HistoryGraphics historyGraphics = new HistoryGraphics(acc, "Past Earnings");
                 historyGraphics.setVisible(true);
                 historyGraphics.setSize(500, 250);
                 desktop.add(historyGraphics);
@@ -205,15 +204,12 @@ public class FinanceGUI extends JFrame {
         transaction.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                TransactionGraphics newTransaction = new TransactionGraphics();
+                TransactionGraphics newTransaction = new TransactionGraphics(balance);
                 newTransaction.makeTransactionPanel(acc);
                 newTransaction.setVisible(true);
                 newTransaction.setSize(500, 250);
                 desktop.add(newTransaction);
-                balance = new JLabel("Current Balance:  $" + acc.getBalance());
-                balance.setFont(font);
-                balance.setBackground(Color.WHITE);
-                balance.setForeground(Color.decode("#364849"));
+                balance.setText("Current Balance : $" + acc.getBalance());
             }
         }
         );
@@ -256,59 +252,6 @@ public class FinanceGUI extends JFrame {
         balance.setFont(font);
         balance.setBackground(Color.WHITE);
         balance.setForeground(Color.decode("#364849"));
-    }
-
-
-    private class RemoveTransactionAction implements Icon, Action {
-        @Override
-        public Object getValue(String key) {
-            return null;
-        }
-
-        @Override
-        public void putValue(String key, Object value) {
-
-        }
-
-        @Override
-        public void setEnabled(boolean b) {
-
-        }
-
-        @Override
-        public boolean isEnabled() {
-            return false;
-        }
-
-        @Override
-        public void addPropertyChangeListener(PropertyChangeListener listener) {
-
-        }
-
-        @Override
-        public void removePropertyChangeListener(PropertyChangeListener listener) {
-
-        }
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-
-        @Override
-        public void paintIcon(Component c, Graphics g, int x, int y) {
-
-        }
-
-        @Override
-        public int getIconWidth() {
-            return 0;
-        }
-
-        @Override
-        public int getIconHeight() {
-            return 0;
-        }
     }
 
 }
