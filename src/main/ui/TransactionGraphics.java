@@ -58,6 +58,7 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
         }
         Transaction t = new Transaction(title, date, amount, description, newTransactionType);
         currentAccount.addTransaction(t);
+
     }
 
     //EFFECTS: sets up the visuals.

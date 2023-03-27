@@ -210,6 +210,10 @@ public class FinanceGUI extends JFrame {
                 newTransaction.setVisible(true);
                 newTransaction.setSize(500, 250);
                 desktop.add(newTransaction);
+                balance = new JLabel("Current Balance:  $" + acc.getBalance());
+                balance.setFont(font);
+                balance.setBackground(Color.WHITE);
+                balance.setForeground(Color.decode("#364849"));
             }
         }
         );

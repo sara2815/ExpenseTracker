@@ -22,6 +22,7 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
     JPanel viewHistoryPanel = new JPanel();
     Account currentAcc = new Account("dummy", 0);
     String command;
+    JButton close = new JButton("Close");
 
     // New: the five panels
 
@@ -35,18 +36,25 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
         //adds new transaction to the account
     }
 
-    private void setUpVisuals() {
+    public void setUpVisuals() {
         setLayout(new FlowLayout());   // set layout manager for the JFrame
         setBackground(Color.decode("#C29540"));
         setBorder(new LineBorder(Color.decode("#C29540"), 10));
-        viewHistoryPanel.setVisible(true);
         history.setVisible(true);
         viewHistoryPanel.add(history);
         hedPanel.setVisible(true);
+        close.setBackground(Color.red);
+        viewHistoryPanel.add(close);
         viewHistoryPanel.setVisible(true);
         this.add(viewHistoryPanel);
         this.setLocation(400, 100);
         this.pack();
+        close.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+            }
+        });
         if (command.equals("Past Earnings")) {
             viewPastEarnings();
         } else if (command.equals("All Past Transactions")) {
@@ -54,7 +62,9 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
         }
     }
 
-    private JList viewPastEarnings() {
+
+
+    public JList viewPastEarnings() {
         ArrayList<String> oldEarningsNames = new ArrayList<String>();
         for (Transaction t : currentAcc.getEarningsHistory()) {
             oldEarningsNames.add(" Name:          "
@@ -69,8 +79,13 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
         earningHistory.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
         earningHistory.setLayoutOrientation(JList.HORIZONTAL_WRAP);
         earningHistory.setVisibleRowCount(-1);
-        JScrollPane listScroller = new JScrollPane(history);
-        viewHistoryPanel.add(listScroller);
+        Font font = new Font("Verdana", Font.BOLD, 13);
+        history.setFont(font);
+        history.setForeground(Color.WHITE);
+        history.setBackground(Color.decode("#C29540"));
+        viewHistoryPanel.setBackground(Color.decode("#C29540"));
+        JScrollPane earningListScroller = new JScrollPane(history);
+        viewHistoryPanel.add(earningListScroller);
         return earningHistory;
     }
 
