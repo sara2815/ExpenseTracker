@@ -61,7 +61,7 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
 
     //EFFECTS: Creates a Scrollable JList of all past Transactions and places it on panel
     //MODIFIES: this
-    public JList viewPastTransactions() {
+    public void viewPastTransactions() {
         ArrayList<String> oldTransactionNames = new ArrayList<String>();
         for (Transaction t : currentAcc.getTransactionHistory()) {
             String operator = "-";
@@ -84,7 +84,6 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
         viewHistoryPanel.setBackground(Color.decode("#C29540"));
         JScrollPane listScroller = new JScrollPane(history);
         viewHistoryPanel.add(listScroller);
-        return history;
     }
 
     @Override

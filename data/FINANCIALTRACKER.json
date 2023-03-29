@@ -1,7 +1,7 @@
 {"allUsers": [
     {
-        "totalEarnings": 3000,
-        "balance": 3000,
+        "totalEarnings": 3400,
+        "balance": 3400,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -21,8 +21,8 @@
         "totalExpense": 0
     },
     {
-        "totalEarnings": 2800,
-        "balance": 2800,
+        "totalEarnings": 3200,
+        "balance": 3200,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -42,8 +42,8 @@
         "totalExpense": 0
     },
     {
-        "totalEarnings": 48000,
-        "balance": 45400,
+        "totalEarnings": 56000,
+        "balance": 53000,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -75,11 +75,11 @@
             "title": "laptop"
         }],
         "userName": "adyesha",
-        "totalExpense": 2600
+        "totalExpense": 3000
     },
     {
-        "totalEarnings": 48000,
-        "balance": 43200,
+        "totalEarnings": 56000,
+        "balance": 50400,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -127,11 +127,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 4800
+        "totalExpense": 5600
     },
     {
-        "totalEarnings": 48000,
-        "balance": 23200,
+        "totalEarnings": 56000,
+        "balance": 26400,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -193,11 +193,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 24800
+        "totalExpense": 29600
     },
     {
-        "totalEarnings": 48000,
-        "balance": 23120,
+        "totalEarnings": 56000,
+        "balance": 26300,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -273,11 +273,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 24880
+        "totalExpense": 29700
     },
     {
-        "totalEarnings": 900,
-        "balance": 900,
+        "totalEarnings": 1100,
+        "balance": 1100,
         "earningsHistory": [{
             "date": 5,
             "transactionType": "EARNING",
@@ -297,8 +297,8 @@
         "totalExpense": 0
     },
     {
-        "totalEarnings": 48000,
-        "balance": 23120,
+        "totalEarnings": 56000,
+        "balance": 26300,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -374,11 +374,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 24880
+        "totalExpense": 29700
     },
     {
-        "totalEarnings": 48000,
-        "balance": 22100,
+        "totalEarnings": 56000,
+        "balance": 24940,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -468,11 +468,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 25900
+        "totalExpense": 31060
     },
     {
-        "totalEarnings": 48000,
-        "balance": 20000,
+        "totalEarnings": 56000,
+        "balance": 22000,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -576,11 +576,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 28000
+        "totalExpense": 34000
     },
     {
-        "totalEarnings": 48000,
-        "balance": 19600,
+        "totalEarnings": 56000,
+        "balance": 21400,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -698,11 +698,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 28400
+        "totalExpense": 34600
     },
     {
-        "totalEarnings": 48000,
-        "balance": 16600,
+        "totalEarnings": 56000,
+        "balance": 16400,
         "earningsHistory": [{
             "date": 1,
             "transactionType": "EARNING",
@@ -834,11 +834,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 31400
+        "totalExpense": 39600
     },
     {
-        "totalEarnings": 48200,
-        "balance": 16600,
+        "totalEarnings": 56400,
+        "balance": 16400,
         "earningsHistory": [
             {
                 "date": 1,
@@ -1000,233 +1000,11 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 31600
+        "totalExpense": 40000
     },
     {
-        "totalEarnings": 48200,
-        "balance": 12000,
-        "earningsHistory": [
-            {
-                "date": 1,
-                "transactionType": "EARNING",
-                "amount": 4000,
-                "description": "untitled",
-                "title": "clothes"
-            },
-            {
-                "date": 3,
-                "transactionType": "EARNING",
-                "amount": 100,
-                "description": "Trial",
-                "title": "trial demo"
-            }
-        ],
-        "transactionHistory": [
-            {
-                "date": 5,
-                "transactionType": "EXPENSE",
-                "amount": 1000,
-                "description": "no",
-                "title": "demo"
-            },
-            {
-                "date": 5,
-                "transactionType": "EXPENSE",
-                "amount": 1000,
-                "description": "no",
-                "title": "jilly"
-            },
-            {
-                "date": 5,
-                "transactionType": "EXPENSE",
-                "amount": 1000,
-                "description": "no",
-                "title": "billy"
-            },
-            {
-                "date": 10,
-                "transactionType": "EXPENSE",
-                "amount": 1600,
-                "description": "no way",
-                "title": "funny"
-            },
-            {
-                "date": 12,
-                "transactionType": "EXPENSE",
-                "amount": 1000,
-                "description": "no",
-                "title": "afniw"
-            },
-            {
-                "date": 12,
-                "transactionType": "EXPENSE",
-                "amount": 420,
-                "description": "shfai",
-                "title": "sfiu"
-            },
-            {
-                "date": 3,
-                "transactionType": "EXPENSE",
-                "amount": 200,
-                "description": "untitled",
-                "title": "cpsc"
-            },
-            {
-                "date": 3,
-                "transactionType": "EXPENSE",
-                "amount": 200,
-                "description": "untitled",
-                "title": "laptop"
-            },
-            {
-                "date": 1,
-                "transactionType": "EARNING",
-                "amount": 4000,
-                "description": "untitled",
-                "title": "clothes"
-            },
-            {
-                "date": 3,
-                "transactionType": "EXPENSE",
-                "amount": 2000,
-                "description": "untitled",
-                "title": "clothes"
-            },
-            {
-                "date": 12,
-                "transactionType": "EXPENSE",
-                "amount": 10,
-                "description": "ate chips",
-                "title": "chips"
-            },
-            {
-                "date": 12,
-                "transactionType": "EXPENSE",
-                "amount": 170,
-                "description": "bi",
-                "title": "afuh"
-            },
-            {
-                "date": 12,
-                "transactionType": "EXPENSE",
-                "amount": 100,
-                "description": "foaqfjo",
-                "title": "trial"
-            },
-            {
-                "date": 3,
-                "transactionType": "EXPENSE",
-                "amount": 100,
-                "description": "Trial",
-                "title": "trial demo"
-            },
-            {
-                "date": 3,
-                "transactionType": "EARNING",
-                "amount": 100,
-                "description": "Trial",
-                "title": "trial demo"
-            }
-        ],
-        "expensesHistory": [
-            {
-                "date": 5,
-                "transactionType": "EXPENSE",
-                "amount": 1000,
-                "description": "no",
-                "title": "demo"
-            },
-            {
-                "date": 5,
-                "transactionType": "EXPENSE",
-                "amount": 1000,
-                "description": "no",
-                "title": "jilly"
-            },
-            {
-                "date": 5,
-                "transactionType": "EXPENSE",
-                "amount": 1000,
-                "description": "no",
-                "title": "billy"
-            },
-            {
-                "date": 10,
-                "transactionType": "EXPENSE",
-                "amount": 1600,
-                "description": "no way",
-                "title": "funny"
-            },
-            {
-                "date": 12,
-                "transactionType": "EXPENSE",
-                "amount": 1000,
-                "description": "no",
-                "title": "afniw"
-            },
-            {
-                "date": 12,
-                "transactionType": "EXPENSE",
-                "amount": 420,
-                "description": "shfai",
-                "title": "sfiu"
-            },
-            {
-                "date": 3,
-                "transactionType": "EXPENSE",
-                "amount": 200,
-                "description": "untitled",
-                "title": "cpsc"
-            },
-            {
-                "date": 3,
-                "transactionType": "EXPENSE",
-                "amount": 200,
-                "description": "untitled",
-                "title": "laptop"
-            },
-            {
-                "date": 3,
-                "transactionType": "EXPENSE",
-                "amount": 2000,
-                "description": "untitled",
-                "title": "clothes"
-            },
-            {
-                "date": 12,
-                "transactionType": "EXPENSE",
-                "amount": 10,
-                "description": "ate chips",
-                "title": "chips"
-            },
-            {
-                "date": 12,
-                "transactionType": "EXPENSE",
-                "amount": 170,
-                "description": "bi",
-                "title": "afuh"
-            },
-            {
-                "date": 12,
-                "transactionType": "EXPENSE",
-                "amount": 100,
-                "description": "foaqfjo",
-                "title": "trial"
-            },
-            {
-                "date": 3,
-                "transactionType": "EXPENSE",
-                "amount": 100,
-                "description": "Trial",
-                "title": "trial demo"
-            }
-        ],
-        "userName": "adyesha",
-        "totalExpense": 36200
-    },
-    {
-        "totalEarnings": 48200,
-        "balance": 12000,
+        "totalEarnings": 56400,
+        "balance": 2600,
         "earningsHistory": [
             {
                 "date": 1,
@@ -1444,6 +1222,756 @@
             }
         ],
         "userName": "adyesha",
-        "totalExpense": 36200
+        "totalExpense": 53800
+    },
+    {
+        "totalEarnings": 56400,
+        "balance": 2600,
+        "earningsHistory": [
+            {
+                "date": 1,
+                "transactionType": "EARNING",
+                "amount": 4000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EARNING",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            }
+        ],
+        "transactionHistory": [
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "demo"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "jilly"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "billy"
+            },
+            {
+                "date": 10,
+                "transactionType": "EXPENSE",
+                "amount": 1600,
+                "description": "no way",
+                "title": "funny"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "afniw"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "cpsc"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            },
+            {
+                "date": 1,
+                "transactionType": "EARNING",
+                "amount": 4000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 2000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 10,
+                "description": "ate chips",
+                "title": "chips"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 170,
+                "description": "bi",
+                "title": "afuh"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "foaqfjo",
+                "title": "trial"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            },
+            {
+                "date": 3,
+                "transactionType": "EARNING",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            }
+        ],
+        "expensesHistory": [
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "demo"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "jilly"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "billy"
+            },
+            {
+                "date": 10,
+                "transactionType": "EXPENSE",
+                "amount": 1600,
+                "description": "no way",
+                "title": "funny"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "afniw"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "cpsc"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 2000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 10,
+                "description": "ate chips",
+                "title": "chips"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 170,
+                "description": "bi",
+                "title": "afuh"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "foaqfjo",
+                "title": "trial"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            }
+        ],
+        "userName": "adyesha",
+        "totalExpense": 53800
+    },
+    {
+        "totalEarnings": 76400,
+        "balance": 12600,
+        "earningsHistory": [
+            {
+                "date": 2,
+                "transactionType": "EARNING",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 2,
+                "transactionType": "EARNING",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 1,
+                "transactionType": "EARNING",
+                "amount": 4000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EARNING",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            }
+        ],
+        "transactionHistory": [
+            {
+                "date": 2,
+                "transactionType": "EXPENSE",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 2,
+                "transactionType": "EARNING",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 2,
+                "transactionType": "EARNING",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "demo"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "jilly"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "billy"
+            },
+            {
+                "date": 10,
+                "transactionType": "EXPENSE",
+                "amount": 1600,
+                "description": "no way",
+                "title": "funny"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "afniw"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "cpsc"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            },
+            {
+                "date": 1,
+                "transactionType": "EARNING",
+                "amount": 4000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 2000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 10,
+                "description": "ate chips",
+                "title": "chips"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 170,
+                "description": "bi",
+                "title": "afuh"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "foaqfjo",
+                "title": "trial"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            },
+            {
+                "date": 3,
+                "transactionType": "EARNING",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            }
+        ],
+        "expensesHistory": [
+            {
+                "date": 2,
+                "transactionType": "EXPENSE",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "demo"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "jilly"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "billy"
+            },
+            {
+                "date": 10,
+                "transactionType": "EXPENSE",
+                "amount": 1600,
+                "description": "no way",
+                "title": "funny"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "afniw"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "cpsc"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 2000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 10,
+                "description": "ate chips",
+                "title": "chips"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 170,
+                "description": "bi",
+                "title": "afuh"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "foaqfjo",
+                "title": "trial"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            }
+        ],
+        "userName": "adyesha",
+        "totalExpense": 63800
+    },
+    {
+        "totalEarnings": 76400,
+        "balance": 12600,
+        "earningsHistory": [
+            {
+                "date": 2,
+                "transactionType": "EARNING",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 2,
+                "transactionType": "EARNING",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 1,
+                "transactionType": "EARNING",
+                "amount": 4000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EARNING",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            }
+        ],
+        "transactionHistory": [
+            {
+                "date": 2,
+                "transactionType": "EXPENSE",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 2,
+                "transactionType": "EARNING",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 2,
+                "transactionType": "EARNING",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "demo"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "jilly"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "billy"
+            },
+            {
+                "date": 10,
+                "transactionType": "EXPENSE",
+                "amount": 1600,
+                "description": "no way",
+                "title": "funny"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "afniw"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "cpsc"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            },
+            {
+                "date": 1,
+                "transactionType": "EARNING",
+                "amount": 4000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 2000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 10,
+                "description": "ate chips",
+                "title": "chips"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 170,
+                "description": "bi",
+                "title": "afuh"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "foaqfjo",
+                "title": "trial"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            },
+            {
+                "date": 3,
+                "transactionType": "EARNING",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            }
+        ],
+        "expensesHistory": [
+            {
+                "date": 2,
+                "transactionType": "EXPENSE",
+                "amount": 10000,
+                "description": "no",
+                "title": "eighw"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "demo"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "jilly"
+            },
+            {
+                "date": 5,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "billy"
+            },
+            {
+                "date": 10,
+                "transactionType": "EXPENSE",
+                "amount": 1600,
+                "description": "no way",
+                "title": "funny"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 1000,
+                "description": "no",
+                "title": "afniw"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 420,
+                "description": "shfai",
+                "title": "sfiu"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "cpsc"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 200,
+                "description": "untitled",
+                "title": "laptop"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 2000,
+                "description": "untitled",
+                "title": "clothes"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 10,
+                "description": "ate chips",
+                "title": "chips"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 170,
+                "description": "bi",
+                "title": "afuh"
+            },
+            {
+                "date": 12,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "foaqfjo",
+                "title": "trial"
+            },
+            {
+                "date": 3,
+                "transactionType": "EXPENSE",
+                "amount": 100,
+                "description": "Trial",
+                "title": "trial demo"
+            }
+        ],
+        "userName": "adyesha",
+        "totalExpense": 63800
     }
 ]}

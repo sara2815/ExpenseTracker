@@ -63,6 +63,8 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
         amountPanel.add(makeAmount);
         datePanel.add(dateLabel);
         datePanel.add(makeDate);
+        descriptionPanel.add(descriptionLabel);
+        descriptionPanel.add(makeDescription);
         setUpAppearance();
     }
 
@@ -87,8 +89,6 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
     //EFFECTS: sets up the visual appearance of the various components on the panel.
     public void setUpAppearance() {
         makeTransactionType(transactionTypeLabel, r1, r2);
-        descriptionPanel.add(descriptionLabel);
-        descriptionPanel.add(makeDescription);
         createPanel.add(doit);
         createPanel.add(close);
         hedPanel.setVisible(true);

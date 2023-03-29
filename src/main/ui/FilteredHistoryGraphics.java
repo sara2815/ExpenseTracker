@@ -44,7 +44,7 @@ public class FilteredHistoryGraphics extends JInternalFrame implements ActionLis
         setBorder(new LineBorder(Color.decode("#C29540"), 10));
         hedPanel.setVisible(true);
         this.add(viewHistoryPanel);
-        this.setLocation(350, 300);
+        this.setLocation(300, 300);
         this.pack();
         setUpVisuals();
         //adds new transaction to the account
