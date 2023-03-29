@@ -141,7 +141,7 @@ public class FilteredHistoryGraphics extends JInternalFrame implements ActionLis
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // must override but performs no special actions.
+        // must override but performs no special actions in this case.
 
     }
 }

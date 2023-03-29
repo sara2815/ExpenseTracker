@@ -50,3 +50,10 @@ beneficial to me and to other students.
 ###Resources Used
 Teller App was used as a reference point to build UI.
 Serialization Demo App was used as reference to build data persistence
+
+MIT edu - Visual Guide to Swing Components
+https://web.mit.edu/6.005/www/sp14/psets/ps4/java-6-tutorial/components.html
+
+Oracle Java Documentation
+https://docs.oracle.com/middleware/1212/jdev/OJDUG/java_swing.htm#OJDUG6949
+

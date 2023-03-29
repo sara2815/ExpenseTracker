@@ -102,6 +102,7 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
             @Override
             public void actionPerformed(ActionEvent e) {
                 createTransaction();
+                setVisible(false);
             }
         });
         close.addActionListener(new ActionListener() {
