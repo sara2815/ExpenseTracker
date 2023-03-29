@@ -37,7 +37,16 @@ beneficial to me and to other students.
 ###User Stories Achieved in Phase 2
 - *As a user, I want my transactions and history to be saved when I leave, if I choose to.*
 - *As a user, I want to be able to given the option to load my past transactions from file.*
+
+
+###User Stories Achieved in Phase 3
+- *As a user, I want my transactions and history to be saved when I leave, if I choose to.*
+- *As a user, I want to be able to given the option to load my past transactions from file.*
+- *As a user, I can add new transactions*
+- *As a user, I can view all my past transactions.*
+- *As a user, I can filter my transactions based on type*
+- *As a user, I can view my current balance.*
+- *GUI based UI*
 ###Resources Used
 Teller App was used as a reference point to build UI.
-
 Serialization Demo App was used as reference to build data persistence

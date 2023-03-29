@@ -52,6 +52,7 @@ public class FilteredHistoryGraphics extends JInternalFrame implements ActionLis
 
     //EFFECTS: Sets up the visual appearance of the Panel. Adds all the components
     //MODIFIES: this and current account
+
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public void setUpVisuals() {
         viewPastEarnings();
