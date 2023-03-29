@@ -12,10 +12,11 @@ import java.awt.event.ActionListener;
 import java.awt.*;
 import java.util.ArrayList;
 
+//sets up appearance and functions of the panel that brings up all past transactions added
 
 public class HistoryGraphics extends JInternalFrame implements ActionListener {
     JList history = new JList();
-    JList earningHistory = new JList();
+    JList filteredHistory = new JList();
     JPanel viewHistoryPanel = new JPanel();
     Account currentAcc = new Account("dummy", 0);
     String command;
@@ -39,7 +40,7 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
         setBackground(Color.decode("#C29540"));
         setBorder(new LineBorder(Color.decode("#C29540"), 10));
         history.setVisible(true);
-        viewHistoryPanel.setLayout(new BoxLayout(viewHistoryPanel,BoxLayout.PAGE_AXIS));
+        viewHistoryPanel.setLayout(new BoxLayout(viewHistoryPanel, BoxLayout.PAGE_AXIS));
         viewHistoryPanel.add(history);
         hedPanel.setVisible(true);
         close.setBackground(Color.white);
@@ -54,39 +55,9 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
                 setVisible(false);
             }
         });
-        if (command.equals("Past Earnings")) {
-            viewPastEarnings();
-        } else if (command.equals("All Past Transactions")) {
-            viewPastTransactions();
-        }
+        viewPastTransactions();
     }
 
-    //EFFECTS: Creates new Scrollable JList that has the past Earning History and puts it on panel.
-    //MODIFIES:this
-    public JList viewPastEarnings() {
-        ArrayList<String> oldEarningsNames = new ArrayList<String>();
-        for (Transaction t : currentAcc.getEarningsHistory()) {
-            oldEarningsNames.add(" Name:          "
-                    + t.getTitle()
-                    + "\t          Amount : $"
-                    + t.getAmount()
-                    + "\t          Date: " + t.getDate());
-        }
-        String[] oldEarnings = new String[oldEarningsNames.size()];
-        oldEarningsNames.toArray(oldEarnings);
-        earningHistory = new JList(oldEarnings);
-        earningHistory.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        earningHistory.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-        earningHistory.setVisibleRowCount(-1);
-        Font font = new Font("Verdana", Font.BOLD, 13);
-        earningHistory.setFont(font);
-        earningHistory.setForeground(Color.WHITE);
-        earningHistory.setBackground(Color.decode("#C29540"));
-        viewHistoryPanel.setBackground(Color.decode("#C29540"));
-        JScrollPane earningListScroller = new JScrollPane(earningHistory);
-        viewHistoryPanel.add(earningListScroller);
-        return earningHistory;
-    }
 
     //EFFECTS: Creates a Scrollable JList of all past Transactions and places it on panel
     //MODIFIES: this
@@ -98,7 +69,7 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
                 operator = "";
             }
             oldTransactionNames.add(" Name:          " + t.getTitle() + "          Amount : $" + operator
-                    + t.getAmount()  + "\t          Date: " + t.getDate());
+                    + t.getAmount() + "\t          Date: " + t.getDate());
         }
         String[] oldTransactions = new String[oldTransactionNames.size()];
         oldTransactionNames.toArray(oldTransactions);

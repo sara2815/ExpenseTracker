@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 
 import java.awt.*;
 
+//sets up appearance and functions of the panel that allows user to add new transactions
 public class TransactionGraphics extends JInternalFrame implements ActionListener {
     JLabel heading = new JLabel("New Transaction");
     JLabel titleLabel = new JLabel("Enter transaction name:   ");
@@ -49,6 +50,19 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
     public void makeTransactionPanel(Account acc) {
         this.currentAccount = acc;
         setTitle("Create a new transaction");
+        setLayout(new FlowLayout());   // set layout manager for the JFrame
+        close.setBackground(Color.white);
+        makeTitle.setEditable(true);
+        makeAmount.setEditable(true);
+        makeDate.setEditable(true);
+        makeDescription.setEditable(true);
+        hedPanel.add(heading);
+        titlePanel.add(titleLabel);
+        titlePanel.add(makeTitle);
+        amountPanel.add(amountLabel);
+        amountPanel.add(makeAmount);
+        datePanel.add(dateLabel);
+        datePanel.add(makeDate);
         setUpAppearance();
     }
 
@@ -71,21 +85,7 @@ public class TransactionGraphics extends JInternalFrame implements ActionListene
     }
 
     //EFFECTS: sets up the visual appearance of the various components on the panel.
-    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
-    private void setUpAppearance() {
-        setLayout(new FlowLayout());   // set layout manager for the JFrame
-        close.setBackground(Color.white);
-        makeTitle.setEditable(true);
-        makeAmount.setEditable(true);
-        makeDate.setEditable(true);
-        makeDescription.setEditable(true);
-        hedPanel.add(heading);
-        titlePanel.add(titleLabel);
-        titlePanel.add(makeTitle);
-        amountPanel.add(amountLabel);
-        amountPanel.add(makeAmount);
-        datePanel.add(dateLabel);
-        datePanel.add(makeDate);
+    public void setUpAppearance() {
         makeTransactionType(transactionTypeLabel, r1, r2);
         descriptionPanel.add(descriptionLabel);
         descriptionPanel.add(makeDescription);

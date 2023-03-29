@@ -106,7 +106,7 @@ public class FinanceGUI extends JFrame {
         buttonPanel.add(transactionButton());
         buttonPanel.add(historyButton());
         buttonPanel.add(saveButton());
-        buttonPanel.add(earningHistoryButton());
+        buttonPanel.add(filteredTransactionButton());
         return buttonPanel;
     }
 
@@ -169,9 +169,9 @@ public class FinanceGUI extends JFrame {
 
 
     //EFFECTS: Creates a button that when clicked allows user to see all the past transactions they have made.
-    private JButton earningHistoryButton() {
+    private JButton filteredTransactionButton() {
         //
-        JButton history = new JButton("View Earning History");
+        JButton history = new JButton("Filter on Transaction Type");
         Font font = new Font("Arial", Font.BOLD, 22);
         history.setFont(font);
         history.setBackground(Color.WHITE);
@@ -181,10 +181,10 @@ public class FinanceGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                HistoryGraphics historyGraphics = new HistoryGraphics(acc, "Past Earnings");
-                historyGraphics.setVisible(true);
-                historyGraphics.setSize(500, 250);
-                desktop.add(historyGraphics);
+                FilteredHistoryGraphics filteredHistoryGraphics = new FilteredHistoryGraphics(acc);
+                filteredHistoryGraphics.setVisible(true);
+                filteredHistoryGraphics.setSize(500, 300);
+                desktop.add(filteredHistoryGraphics);
             }
         });
 
