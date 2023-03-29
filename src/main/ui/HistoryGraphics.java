@@ -16,11 +16,10 @@ import java.util.ArrayList;
 
 public class HistoryGraphics extends JInternalFrame implements ActionListener {
     JList history = new JList();
-    JList filteredHistory = new JList();
     JPanel viewHistoryPanel = new JPanel();
     Account currentAcc = new Account("dummy", 0);
     String command;
-    JButton close = new JButton("Close");
+    JButton close = new JButton();
     // New: the five panels
     JPanel hedPanel = new JPanel();
 
@@ -29,6 +28,9 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
     public HistoryGraphics(Account acc, String heading) {
         this.currentAcc = acc;
         this.command = heading;
+        Icon icon = new ImageIcon("Image/closeSmallest.png");
+        this.close.setIcon(icon);
+        close.setBackground(Color.decode("#AD7811"));
         setTitle(heading);
         setUpVisuals();
         //adds new transaction to the account
@@ -42,9 +44,8 @@ public class HistoryGraphics extends JInternalFrame implements ActionListener {
         history.setVisible(true);
         viewHistoryPanel.setLayout(new BoxLayout(viewHistoryPanel, BoxLayout.PAGE_AXIS));
         viewHistoryPanel.add(history);
-        hedPanel.setVisible(true);
-        close.setBackground(Color.white);
         viewHistoryPanel.add(close);
+        hedPanel.setVisible(true);
         viewHistoryPanel.setVisible(true);
         this.add(viewHistoryPanel);
         this.setLocation(400, 100);

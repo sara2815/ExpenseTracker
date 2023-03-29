@@ -25,8 +25,8 @@ public class FinanceGUI extends JFrame {
     private String name;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
-    private static final int WIDTH = 900;
-    private static final int HEIGHT = 650;
+    private static final int WIDTH = 1000;
+    private static final int HEIGHT = 700;
     private JDesktopPane desktop;
     private JInternalFrame controlPanel;
     private JPanel headers;
@@ -159,7 +159,7 @@ public class FinanceGUI extends JFrame {
 
                 HistoryGraphics historyGraphics = new HistoryGraphics(acc, "All Past Transactions");
                 historyGraphics.setVisible(true);
-                historyGraphics.setSize(500, 250);
+                historyGraphics.setSize(600, 300);
                 desktop.add(historyGraphics);
             }
         });
