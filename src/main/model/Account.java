@@ -50,6 +50,7 @@ public class Account implements Writable {
     // amount to balance and to totalEarnings.
     public void addTransaction(Transaction t) {
         transactionHistory.addFirst(t);
+        EventLog.getInstance().logEvent(new Event("New Transaction added."));
         if (t.getTransactionType() == Category.EARNING) {
             earningsHistory.addFirst(t);
             balance = balance + t.getAmount();
@@ -63,12 +64,14 @@ public class Account implements Writable {
 
     //EFFECTS: returns the transaction history
     public LinkedList<Transaction> getTransactionHistory() {
+        EventLog.getInstance().logEvent(new Event("User viewed past transaction history."));
         return transactionHistory;
 
     }
 
     //EFFECTS: returns the expenseHistory
     public LinkedList<Transaction> getExpensesHistory() {
+        EventLog.getInstance().logEvent(new Event("User viewed past expense history."));
         return expensesHistory;
 
     }
@@ -91,6 +94,7 @@ public class Account implements Writable {
 
     //EFFECTS: returns the expenseHistory
     public LinkedList<Transaction> getEarningsHistory() {
+        EventLog.getInstance().logEvent(new Event("User viewed past earnings history."));
         return earningsHistory;
 
     }

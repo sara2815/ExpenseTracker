@@ -47,6 +47,15 @@ beneficial to me and to other students.
 - *As a user, I can filter my transactions based on type*
 - *As a user, I can view my current balance.*
 - *GUI based UI*
+
+###Phase 3 Instructions for Grader ###
+
+- You can generate the first required action related to adding Xs to a Y by clicking on add Transactions button.
+- You can generate the second required action related to adding Xs to a Y by filtering transactions by transaction type.
+- You can view a panel of all the X added to Y, by clicking on the History button which shows all previous transactions.
+- You can locate my visual component by looking at my buffered image which appears as the application loads.
+- You can save the state of my application by clicking on the save button.
+- You can reload the state of my application by entering yes when prompted to load or not at the start of the application.
 ###Resources Used
 Teller App was used as a reference point to build UI.
 Serialization Demo App was used as reference to build data persistence

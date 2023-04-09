@@ -1,6 +1,8 @@
 package ui;
 
 import model.Account;
+import model.EventLog;
+import model.Event;
 import model.UserCollection;
 import persistence.JsonReader;
 import persistence.JsonWriter;
@@ -11,6 +13,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -35,6 +38,8 @@ public class FinanceGUI extends JFrame {
 
     //constructor sets up the various components of the financialGui
     public FinanceGUI() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        displayMessageWhenClosed();
         desktop = new JDesktopPane();
         desktop.setBackground(Color.decode("#2B6D72"));
         allUser = new UserCollection();
@@ -52,6 +57,19 @@ public class FinanceGUI extends JFrame {
                 JOptionPane.QUESTION_MESSAGE);
 
         handleAnswer(loadAnswer);
+    }
+
+    private void displayMessageWhenClosed() {
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                EventLog eventLog = EventLog.getInstance();
+                for (Event e : eventLog) {
+                    System.out.println(e);
+                }
+                System.exit(0);
+            }
+        });
     }
 
     //EFFECTS: Uses the user response to determine whether to load data or not
@@ -253,5 +271,4 @@ public class FinanceGUI extends JFrame {
         balance.setBackground(Color.WHITE);
         balance.setForeground(Color.decode("#364849"));
     }
-
 }
