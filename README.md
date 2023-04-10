@@ -66,3 +66,30 @@ https://web.mit.edu/6.005/www/sp14/psets/ps4/java-6-tutorial/components.html
 Oracle Java Documentation
 https://docs.oracle.com/middleware/1212/jdev/OJDUG/java_swing.htm#OJDUG6949
 
+###Phase 4: Task 2
+#### Example of a log that the application may print:
+C:\Users\User\.jdks\corretto-11.0.12\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\lib\idea_rt.jar=52283:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\bin" -Dfile.encoding=UTF-8 -classpath "C:\Users\User\Desktop\Adyesha\CPSC 210 version 2\project\out\production\Project-Starter;C:\Users\User\Desktop\Adyesha\CPSC 210 version 2\project\lib\json-20210307.jar" ui.MainGUI
+IT WORKS
+
+Saved  to ./data/FINANCIALTRACKER.json
+
+Mon Apr 10 13:02:50 PDT 2023
+New Transaction books added.
+
+Mon Apr 10 13:02:52 PDT 2023
+User viewed past transaction history.
+
+Mon Apr 10 13:02:54 PDT 2023
+User viewed past earnings history.
+
+Mon Apr 10 13:02:54 PDT 2023
+User viewed past expense history.
+
+Process finished with exit code 0
+
+### Note: 
+For task 2 in Phase 4, when the user opts to load their previous data, 
+ the log at the end will print out all transactions added by all users because they all use the addTransaction method. 
+Instructors confirmed that this was okay. 
+
+

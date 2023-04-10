@@ -50,7 +50,7 @@ public class Account implements Writable {
     // amount to balance and to totalEarnings.
     public void addTransaction(Transaction t) {
         transactionHistory.addFirst(t);
-        EventLog.getInstance().logEvent(new Event("New Transaction added."));
+        EventLog.getInstance().logEvent(new Event("New Transaction " + t.getTitle() + " added."));
         if (t.getTransactionType() == Category.EARNING) {
             earningsHistory.addFirst(t);
             balance = balance + t.getAmount();
