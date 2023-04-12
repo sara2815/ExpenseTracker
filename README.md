@@ -27,19 +27,19 @@ beneficial to me and to other students.
 - *As a user, I want to be able to quit the FinancialTracker and leave*
 - *As a user, I want my transactions and history to be saved when I leave, if I choose to.*
 - *As a user, I want to be able to given the option to load my past transactions from file.*
-###User Stories Achieved in Phase 1
+### User Stories Achieved in Phase 1
 - *Users are able to add these transactions to their accounts*
 - *Users are able to view their balance*
 - *Users are able to view only their expenditure history*
 - *Users are able to view only their earning history*
 - *Users are able to quit the Financial Tracker and leave*
 - 
-###User Stories Achieved in Phase 2
+### User Stories Achieved in Phase 2
 - *As a user, I want my transactions and history to be saved when I leave, if I choose to.*
 - *As a user, I want to be able to given the option to load my past transactions from file.*
 
 
-###User Stories Achieved in Phase 3
+### User Stories Achieved in Phase 3
 - *As a user, I want my transactions and history to be saved when I leave, if I choose to.*
 - *As a user, I want to be able to given the option to load my past transactions from file.*
 - *As a user, I can add new transactions*
@@ -48,7 +48,7 @@ beneficial to me and to other students.
 - *As a user, I can view my current balance.*
 - *GUI based UI*
 
-###Phase 3 Instructions for Grader ###
+### Phase 3 Instructions for Grader ###
 
 - You can generate the first required action related to adding Xs to a Y by clicking on add Transactions button.
 - You can generate the second required action related to adding Xs to a Y by filtering transactions by transaction type.
@@ -56,7 +56,7 @@ beneficial to me and to other students.
 - You can locate my visual component by looking at my buffered image which appears as the application loads.
 - You can save the state of my application by clicking on the save button.
 - You can reload the state of my application by entering yes when prompted to load or not at the start of the application.
-###Resources Used
+### Resources Used
 Teller App was used as a reference point to build UI.
 Serialization Demo App was used as reference to build data persistence
 
@@ -66,7 +66,7 @@ https://web.mit.edu/6.005/www/sp14/psets/ps4/java-6-tutorial/components.html
 Oracle Java Documentation
 https://docs.oracle.com/middleware/1212/jdev/OJDUG/java_swing.htm#OJDUG6949
 
-###Phase 4: Task 2
+### Phase 4: Task 2
 #### Example of a log that the application may print:
 
 Mon Apr 10 13:02:50 PDT 2023
@@ -88,7 +88,7 @@ For task 2 in Phase 4, when the user opts to load their previous data,
  the log at the end will print out all transactions added by all users because they all use the addTransaction method. 
 Instructors confirmed that this was okay. 
 
-###Phase 4: Task 3
+### Phase 4: Task 3
 I would create an abstract class for my graphics.
 My graphics classes are basically responsible for 
 constructing an extra panel and showing particular
