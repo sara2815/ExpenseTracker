@@ -88,4 +88,19 @@ For task 2 in Phase 4, when the user opts to load their previous data,
  the log at the end will print out all transactions added by all users because they all use the addTransaction method. 
 Instructors confirmed that this was okay. 
 
-
+###Phase 4: Task 3
+I would create an abstract class for my graphics.
+My graphics classes are basically responsible for 
+constructing an extra panel and showing particular
+data on it. While there are a few differences 
+between Transaction Graphics, History Graphics and 
+Filtered History Graphics, there are a few similarities
+too. First of all, all of them have a field of type 
+Account. All of them have common methods concerning 
+appearance and set up. I believe it would prevent
+code duplication and create better cohesion and 
+coupling for me to create an Abstract class like 
+"Component Graphics" that has a field of Type Account. 
+Additionally, the class could contain common methods such as setAppearance 
+(which sets up the graphics in positions). The graphics classes can provide their 
+own implementations for these methods too if required.
