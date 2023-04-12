@@ -68,10 +68,6 @@ https://docs.oracle.com/middleware/1212/jdev/OJDUG/java_swing.htm#OJDUG6949
 
 ###Phase 4: Task 2
 #### Example of a log that the application may print:
-C:\Users\User\.jdks\corretto-11.0.12\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\lib\idea_rt.jar=52283:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.2\bin" -Dfile.encoding=UTF-8 -classpath "C:\Users\User\Desktop\Adyesha\CPSC 210 version 2\project\out\production\Project-Starter;C:\Users\User\Desktop\Adyesha\CPSC 210 version 2\project\lib\json-20210307.jar" ui.MainGUI
-IT WORKS
-
-Saved  to ./data/FINANCIALTRACKER.json
 
 Mon Apr 10 13:02:50 PDT 2023
 New Transaction books added.
