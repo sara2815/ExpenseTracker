@@ -19,7 +19,6 @@ public class Account implements Writable {
     private LinkedList<Transaction> earningsHistory;
     private LinkedList<Transaction> expensesHistory;
 
-
     //constructor
 //EFFECTS: Constructs a new account with given username and balance
     public Account(String name, double balance) {
